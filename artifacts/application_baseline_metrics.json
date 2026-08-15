@@ -1,0 +1,122 @@
+{
+  "run_version": "1.0.0",
+  "model_name": "application-logistic-baseline",
+  "model_version": "0.1.0",
+  "source_file": "application_train.csv",
+  "random_seed": 42,
+  "split_summary": {
+    "development": {
+      "rows": 215257,
+      "target_count": 17377,
+      "target_rate": 0.08072675917624049
+    },
+    "calibration": {
+      "rows": 46127,
+      "target_count": 3724,
+      "target_rate": 0.08073362672621241
+    },
+    "holdout": {
+      "rows": 46127,
+      "target_count": 3724,
+      "target_rate": 0.08073362672621241
+    }
+  },
+  "feature_summary": {
+    "selected": 113,
+    "numeric": 103,
+    "categorical": 10,
+    "excluded_by_policy": 21,
+    "excluded_high_missingness": 0,
+    "excluded_constant": 0
+  },
+  "calibration_partition_metrics": {
+    "rows": 46127,
+    "base_rate": 0.08073362672621241,
+    "roc_auc": 0.7459232157159705,
+    "average_precision": 0.2325800163408677,
+    "brier_score": 0.06845455637081585,
+    "base_rate_brier_score": 0.07421570824184502,
+    "brier_skill_score": 0.0776271224449605,
+    "log_loss": 0.24935868526133503,
+    "precision_at_0_5": 0.6981132075471698,
+    "recall_at_0_5": 0.009935553168635876,
+    "top_10_percent": {
+      "population_share": 0.1000065037830338,
+      "probability_threshold": 0.1792433652529395,
+      "selected_event_rate": 0.26165185345761977,
+      "lift": 3.240927777776484,
+      "event_capture_rate": 0.32411385606874327
+    },
+    "top_20_percent": {
+      "population_share": 0.2000130075660676,
+      "probability_threshold": 0.12164230893970965,
+      "selected_event_rate": 0.20257966616084977,
+      "lift": 2.5092353010208157,
+      "event_capture_rate": 0.5018796992481203
+    },
+    "calibration_deciles": [
+      {
+        "count": 4613,
+        "mean_probability": 0.012408913020343963,
+        "observed_rate": 0.013873834814654238
+      },
+      {
+        "count": 4613,
+        "mean_probability": 0.021998551443996088,
+        "observed_rate": 0.021461088228918273
+      },
+      {
+        "count": 4612,
+        "mean_probability": 0.030528305107603654,
+        "observed_rate": 0.030355594102341718
+      },
+      {
+        "count": 4613,
+        "mean_probability": 0.03963071803800869,
+        "observed_rate": 0.04075438976804682
+      },
+      {
+        "count": 4613,
+        "mean_probability": 0.05038947827758713,
+        "observed_rate": 0.045306741816605246
+      },
+      {
+        "count": 4612,
+        "mean_probability": 0.06330158538219048,
+        "observed_rate": 0.06591500433651344
+      },
+      {
+        "count": 4613,
+        "mean_probability": 0.08059723476022086,
+        "observed_rate": 0.08150877953609365
+      },
+      {
+        "count": 4612,
+        "mean_probability": 0.10533501760236616,
+        "observed_rate": 0.10299219427580225
+      },
+      {
+        "count": 4613,
+        "mean_probability": 0.14632882785069973,
+        "observed_rate": 0.14350747886407977
+      },
+      {
+        "count": 4613,
+        "mean_probability": 0.25956100543914296,
+        "observed_rate": 0.26165185345761977
+      }
+    ]
+  },
+  "holdout_evaluated": false,
+  "holdout_note": "The final holdout remains unscored until champion selection and calibration are frozen.",
+  "artifact": {
+    "path": "artifacts\\models\\application_logistic.joblib",
+    "sha256": "4ff59d0cb0db47c1d059583d0d5029dd081c0c8358e23d8c17d87c71074c975c"
+  },
+  "environment": {
+    "python": "3.13.3",
+    "pandas": "3.0.5",
+    "numpy": "2.5.2",
+    "scikit_learn": "1.9.0"
+  }
+}

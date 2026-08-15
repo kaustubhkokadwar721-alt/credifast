@@ -1,0 +1,54 @@
+{
+  "run_version": "1.0.0",
+  "dataset": "home-credit-default-risk",
+  "grain": "one row per SK_ID_CURR across train and test applications",
+  "target_used": false,
+  "source_files": [
+    "application_train.csv",
+    "application_test.csv",
+    "bureau.csv",
+    "bureau_balance.csv",
+    "previous_application.csv",
+    "POS_CASH_balance.csv",
+    "credit_card_balance.csv",
+    "installments_payments.csv"
+  ],
+  "row_count": 356255,
+  "unique_keys": 356255,
+  "duplicate_keys": 0,
+  "column_count": 151,
+  "feature_count_excluding_key": 150,
+  "source_coverage": {
+    "bureau": {
+      "rows": 305811,
+      "rate": 0.8584047943186762
+    },
+    "previous_application": {
+      "rows": 338857,
+      "rate": 0.9511641941867482
+    },
+    "pos": {
+      "rows": 337252,
+      "rate": 0.9466589942597297
+    },
+    "credit_card": {
+      "rows": 103558,
+      "rate": 0.2906850430169401
+    },
+    "installments": {
+      "rows": 339587,
+      "rate": 0.9532132882345511
+    }
+  },
+  "artifact": {
+    "path": "data\\processed\\history_features.parquet",
+    "bytes": 72644718,
+    "sha256": "b03f7a8a9718e35d954d392dce6c81d95e8cfc6774e43484240bd3f23b49604f"
+  },
+  "leakage_controls": [
+    "TARGET is never selected by the aggregation query.",
+    "Every source is aggregated to SK_ID_CURR before joining applications.",
+    "Only historical relative-day and relative-month fields are summarized.",
+    "The aggregation is identical for training and test application IDs."
+  ]
+}

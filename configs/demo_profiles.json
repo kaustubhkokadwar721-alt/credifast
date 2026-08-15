@@ -1,0 +1,69 @@
+{
+  "profiles_version": "credifast-demo-profiles-0.1.0",
+  "source_population": "Home Credit application_test.csv with frozen CrediFast artifacts",
+  "profiles": [
+    {
+      "key": "strong_full",
+      "label": "Strong · complete evidence",
+      "application_id": 178290,
+      "description": "Low estimated risk with four historical source families.",
+      "demo_intent": "Show the standard evidence-rich review route.",
+      "overrides": {},
+      "simulate_history_unavailable": false
+    },
+    {
+      "key": "boundary_full",
+      "label": "Boundary · human judgement",
+      "application_id": 104351,
+      "description": "A full-history case positioned close to the 10% research grade boundary.",
+      "demo_intent": "Show boundary-aware manual review without changing the probability.",
+      "overrides": {},
+      "simulate_history_unavailable": false
+    },
+    {
+      "key": "partial_history",
+      "label": "Partial history · blended model",
+      "application_id": 138022,
+      "description": "Three source families activate the frozen 75% history / 25% application blend.",
+      "demo_intent": "Show validated model disagreement and data-limited routing.",
+      "overrides": {},
+      "simulate_history_unavailable": false
+    },
+    {
+      "key": "thin_history",
+      "label": "Thin file · zero sources",
+      "application_id": 296239,
+      "description": "No historical source family is available for this applicant.",
+      "demo_intent": "Show visible uncertainty and mandatory data-limited review.",
+      "overrides": {},
+      "simulate_history_unavailable": false
+    },
+    {
+      "key": "high_risk",
+      "label": "High risk · escalated review",
+      "application_id": 176483,
+      "description": "High repayment-difficulty probability with otherwise complete history.",
+      "demo_intent": "Show adverse evidence without presenting an autonomous decline.",
+      "overrides": {},
+      "simulate_history_unavailable": false
+    },
+    {
+      "key": "affordability_stress",
+      "label": "Affordability stress · what-if",
+      "application_id": 178290,
+      "description": "The strong applicant with annual proposed repayment increased to 60,750.",
+      "demo_intent": "Show that affordability can change while historical risk evidence remains separate.",
+      "overrides": {"annual_annuity": 60750.0},
+      "simulate_history_unavailable": false
+    },
+    {
+      "key": "store_outage",
+      "label": "Feature-store outage · fail closed",
+      "application_id": 178290,
+      "description": "A controlled simulation in which the historical feature-store row is unavailable.",
+      "demo_intent": "Show explicit pipeline-quality flags and fail-closed review routing.",
+      "overrides": {},
+      "simulate_history_unavailable": true
+    }
+  ]
+}

@@ -1,0 +1,385 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-14T23:42:02+05:30",
+  "title": "Design System: CrediFast",
+  "extensions": {
+    "colorMeta": {
+      "ink-navy": {
+        "role": "neutral",
+        "displayName": "Ink Navy",
+        "canonical": "#13243a",
+        "tonalRamp": [
+          "oklch(15% 0.045 252)",
+          "oklch(26% 0.045 252)",
+          "oklch(38% 0.045 252)",
+          "oklch(50% 0.045 252)",
+          "oklch(62% 0.045 252)",
+          "oklch(74% 0.045 252)",
+          "oklch(86% 0.045 252)",
+          "oklch(95% 0.045 252)"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Soft Ink",
+        "canonical": "#415268",
+        "tonalRamp": [
+          "oklch(15% 0.035 252)",
+          "oklch(26% 0.035 252)",
+          "oklch(38% 0.035 252)",
+          "oklch(50% 0.035 252)",
+          "oklch(62% 0.035 252)",
+          "oklch(74% 0.035 252)",
+          "oklch(86% 0.035 252)",
+          "oklch(95% 0.035 252)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Warm Paper",
+        "canonical": "#f7f5ef",
+        "tonalRamp": [
+          "oklch(15% 0.012 90)",
+          "oklch(26% 0.012 90)",
+          "oklch(38% 0.012 90)",
+          "oklch(50% 0.012 90)",
+          "oklch(62% 0.012 90)",
+          "oklch(74% 0.012 90)",
+          "oklch(86% 0.012 90)",
+          "oklch(95% 0.012 90)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Working White",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "oklch(15% 0 0)",
+          "oklch(26% 0 0)",
+          "oklch(38% 0 0)",
+          "oklch(50% 0 0)",
+          "oklch(62% 0 0)",
+          "oklch(74% 0 0)",
+          "oklch(86% 0 0)",
+          "oklch(95% 0 0)"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Ledger Rule",
+        "canonical": "#d6dbe2",
+        "tonalRamp": [
+          "oklch(15% 0.015 250)",
+          "oklch(26% 0.015 250)",
+          "oklch(38% 0.015 250)",
+          "oklch(50% 0.015 250)",
+          "oklch(62% 0.015 250)",
+          "oklch(74% 0.015 250)",
+          "oklch(86% 0.015 250)",
+          "oklch(95% 0.015 250)"
+        ]
+      },
+      "action-cobalt": {
+        "role": "primary",
+        "displayName": "Action Cobalt",
+        "canonical": "#2457d6",
+        "tonalRamp": [
+          "oklch(15% 0.18 264)",
+          "oklch(26% 0.18 264)",
+          "oklch(38% 0.18 264)",
+          "oklch(50% 0.18 264)",
+          "oklch(62% 0.18 264)",
+          "oklch(74% 0.18 264)",
+          "oklch(86% 0.18 264)",
+          "oklch(95% 0.18 264)"
+        ]
+      },
+      "action-cobalt-dark": {
+        "role": "primary",
+        "displayName": "Deep Action Cobalt",
+        "canonical": "#173b94",
+        "tonalRamp": [
+          "oklch(15% 0.15 264)",
+          "oklch(26% 0.15 264)",
+          "oklch(38% 0.15 264)",
+          "oklch(50% 0.15 264)",
+          "oklch(62% 0.15 264)",
+          "oklch(74% 0.15 264)",
+          "oklch(86% 0.15 264)",
+          "oklch(95% 0.15 264)"
+        ]
+      },
+      "exception-amber": {
+        "role": "tertiary",
+        "displayName": "Exception Amber",
+        "canonical": "#a45b08",
+        "tonalRamp": [
+          "oklch(15% 0.13 65)",
+          "oklch(26% 0.13 65)",
+          "oklch(38% 0.13 65)",
+          "oklch(50% 0.13 65)",
+          "oklch(62% 0.13 65)",
+          "oklch(74% 0.13 65)",
+          "oklch(86% 0.13 65)",
+          "oklch(95% 0.13 65)"
+        ]
+      },
+      "exception-amber-bg": {
+        "role": "tertiary",
+        "displayName": "Amber Wash",
+        "canonical": "#fff4dc",
+        "tonalRamp": [
+          "oklch(15% 0.045 80)",
+          "oklch(26% 0.045 80)",
+          "oklch(38% 0.045 80)",
+          "oklch(50% 0.045 80)",
+          "oklch(62% 0.045 80)",
+          "oklch(74% 0.045 80)",
+          "oklch(86% 0.045 80)",
+          "oklch(95% 0.045 80)"
+        ]
+      },
+      "alert-red": {
+        "role": "tertiary",
+        "displayName": "Review Red",
+        "canonical": "#a82d2d",
+        "tonalRamp": [
+          "oklch(15% 0.14 25)",
+          "oklch(26% 0.14 25)",
+          "oklch(38% 0.14 25)",
+          "oklch(50% 0.14 25)",
+          "oklch(62% 0.14 25)",
+          "oklch(74% 0.14 25)",
+          "oklch(86% 0.14 25)",
+          "oklch(95% 0.14 25)"
+        ]
+      },
+      "alert-red-bg": {
+        "role": "tertiary",
+        "displayName": "Red Wash",
+        "canonical": "#fff0ef",
+        "tonalRamp": [
+          "oklch(15% 0.035 25)",
+          "oklch(26% 0.035 25)",
+          "oklch(38% 0.035 25)",
+          "oklch(50% 0.035 25)",
+          "oklch(62% 0.035 25)",
+          "oklch(74% 0.035 25)",
+          "oklch(86% 0.035 25)",
+          "oklch(95% 0.035 25)"
+        ]
+      },
+      "ready-green": {
+        "role": "tertiary",
+        "displayName": "Ready Green",
+        "canonical": "#16614a",
+        "tonalRamp": [
+          "oklch(15% 0.09 165)",
+          "oklch(26% 0.09 165)",
+          "oklch(38% 0.09 165)",
+          "oklch(50% 0.09 165)",
+          "oklch(62% 0.09 165)",
+          "oklch(74% 0.09 165)",
+          "oklch(86% 0.09 165)",
+          "oklch(95% 0.09 165)"
+        ]
+      },
+      "ready-green-bg": {
+        "role": "tertiary",
+        "displayName": "Green Wash",
+        "canonical": "#eaf7f0",
+        "tonalRamp": [
+          "oklch(15% 0.035 165)",
+          "oklch(26% 0.035 165)",
+          "oklch(38% 0.035 165)",
+          "oklch(50% 0.035 165)",
+          "oklch(62% 0.035 165)",
+          "oklch(74% 0.035 165)",
+          "oklch(86% 0.035 165)",
+          "oklch(95% 0.035 165)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Docket Display",
+        "purpose": "Page-level thesis headlines only."
+      },
+      "headline": {
+        "displayName": "Routing Headline",
+        "purpose": "The active human-review route in the decision band."
+      },
+      "title": {
+        "displayName": "Section Title",
+        "purpose": "Section rules and compact ledger headings."
+      },
+      "body": {
+        "displayName": "Operational Body",
+        "purpose": "Forms, evidence explanations, and guidance."
+      },
+      "label": {
+        "displayName": "Docket Label",
+        "purpose": "Tracked uppercase metadata, codes, and score labels."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "docket-settle",
+        "value": "520ms cubic-bezier(.16, 1, .3, 1)",
+        "purpose": "Settles the refreshed human-review route with an 8px rise, 2px blur, and transient inset cobalt trace; disabled for reduced motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "single-column",
+        "value": "760px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The single consequential reviewer action, used for Evaluate case.",
+      "html": "<button class=\"ds-btn-primary\">Evaluate case</button>",
+      "css": ".ds-btn-primary { width: 100%; min-height: 2.75rem; padding: .7rem 1rem; border: 1px solid var(--cobalt); border-radius: 2px; background: var(--cobalt); color: #fff; font: 750 .9rem/1.2 sans-serif; transition: background-color 160ms ease, border-color 160ms ease; } .ds-btn-primary:hover { background: var(--cobalt-dark); border-color: var(--cobalt-dark); } .ds-btn-primary:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; } .ds-btn-primary:active { background: var(--cobalt-dark); }"
+    },
+    {
+      "name": "Docket Label",
+      "kind": "chip",
+      "refersTo": "docket-label",
+      "description": "A compact informational identifier for the selected application.",
+      "html": "<span class=\"ds-docket-label\">APPLICATION 178290</span>",
+      "css": ".ds-docket-label { display: inline-block; padding: .32rem .52rem; border-radius: 0; background: var(--ink); color: #fff; font: 750 .72rem/1.2 sans-serif; letter-spacing: .08em; }"
+    },
+    {
+      "name": "Docket Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "A labeled white field for declared financial terms.",
+      "html": "<label class=\"ds-field\">Annual income<input class=\"ds-input\" value=\"135000.00\"></label>",
+      "css": ".ds-field { display: grid; gap: .45rem; color: var(--ink-soft); font: 400 .9rem/1.4 sans-serif; } .ds-input { min-height: 2.75rem; padding: .65rem .8rem; border: 1px solid var(--line); border-radius: 2px; background: var(--surface); color: var(--ink); font: 400 .9rem/1.2 sans-serif; font-variant-numeric: tabular-nums; } .ds-input:hover { border-color: var(--ink-soft); } .ds-input:focus-visible { border-color: var(--cobalt); outline: 2px solid var(--cobalt); outline-offset: 1px; }"
+    },
+    {
+      "name": "Docket Tabs",
+      "kind": "nav",
+      "description": "Quiet three-tab navigation with a shared ledger baseline and cobalt active rule.",
+      "html": "<nav class=\"ds-tabs\" aria-label=\"Docket views\"><button class=\"ds-tab ds-tab-active\">Review workbench</button><button class=\"ds-tab\">Model evidence</button><button class=\"ds-tab\">Responsible AI</button></nav>",
+      "css": ".ds-tabs { display: flex; gap: 1.2rem; overflow-x: auto; border-bottom: 1px solid var(--line); } .ds-tab { padding: .7rem 0 .65rem; border: 0; border-bottom: 2px solid transparent; background: transparent; color: var(--ink-soft); font: 700 .9rem/1.2 sans-serif; white-space: nowrap; } .ds-tab:hover { color: var(--ink); } .ds-tab:focus-visible { outline: 2px solid var(--cobalt); outline-offset: 2px; } .ds-tab-active { border-bottom-color: var(--cobalt); color: var(--ink); }"
+    },
+    {
+      "name": "Score Strip",
+      "kind": "card",
+      "refersTo": "score-strip",
+      "description": "A ruled four-cell summary for risk, score, grade, and confidence.",
+      "html": "<div class=\"ds-score-strip\"><div class=\"ds-score-cell\"><span class=\"ds-score-label\">RISK ESTIMATE</span><strong class=\"ds-score-value\">0.31%</strong></div><div class=\"ds-score-cell\"><span class=\"ds-score-label\">INTERNAL SCORE</span><strong class=\"ds-score-value\">654</strong></div><div class=\"ds-score-cell\"><span class=\"ds-score-label\">RISK GRADE</span><strong class=\"ds-score-value\">A</strong></div><div class=\"ds-score-cell\"><span class=\"ds-score-label\">CONFIDENCE</span><strong class=\"ds-score-value\">HIGH</strong></div></div>",
+      "css": ".ds-score-strip { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: 1px solid var(--line); border-radius: 0; background: var(--surface); } .ds-score-cell { min-width: 0; padding: .82rem .9rem; border-right: 1px solid var(--line); } .ds-score-cell:last-child { border-right: 0; } .ds-score-label { display: block; color: var(--ink-soft); font: 750 .7rem/1.2 sans-serif; letter-spacing: .08em; } .ds-score-value { display: block; margin-top: .2rem; color: var(--ink); font: 760 1.25rem/1.2 sans-serif; font-variant-numeric: tabular-nums; } @media (max-width: 760px) { .ds-score-strip { grid-template-columns: repeat(2, 1fr); } .ds-score-cell:nth-child(2) { border-right: 0; } .ds-score-cell:nth-child(-n+2) { border-bottom: 1px solid var(--line); } }"
+    },
+    {
+      "name": "Routing Band",
+      "kind": "custom",
+      "description": "The signature decision-support band naming the human queue and its rationale.",
+      "html": "<section class=\"ds-route-band\"><div class=\"ds-route-label\">HUMAN REVIEW ROUTE</div><div class=\"ds-route-value\">STANDARD REVIEW</div><p class=\"ds-route-note\">Evidence is sufficiently complete for the normal human review queue.</p></section>",
+      "css": "@keyframes ds-docket-settle { from { transform: translateY(8px); filter: blur(2px); box-shadow: inset 0 6px 0 var(--cobalt); } to { transform: translateY(0); filter: blur(0); box-shadow: inset 0 0 0 transparent; } } .ds-route-band { padding: 1.15rem 0 1rem; border-top: 6px solid var(--ink); border-bottom: 1px solid var(--ink); border-radius: 0; color: var(--ink); animation: ds-docket-settle 520ms cubic-bezier(.16, 1, .3, 1) both; } .ds-route-label { color: var(--ink-soft); font: 800 .72rem/1.2 sans-serif; letter-spacing: .12em; } .ds-route-value { margin: .35rem 0 .45rem; color: var(--ink); font: 760 clamp(1.5rem, 3vw, 2.7rem)/1 sans-serif; letter-spacing: -.035em; } .ds-route-note { max-width: 70ch; margin: 0; color: var(--ink-soft); font: 400 .88rem/1.4 sans-serif; } @media (prefers-reduced-motion: reduce) { .ds-route-band { animation: none; } }"
+    },
+    {
+      "name": "Evidence Row",
+      "kind": "custom",
+      "description": "A ruled ledger row joining a reason code, explanation, and numeric contribution.",
+      "html": "<div class=\"ds-evidence-row\"><strong class=\"ds-evidence-code\">PAY_01</strong><span class=\"ds-evidence-copy\">Declared repayment is high relative to income.</span><span class=\"ds-evidence-weight\">+0.142 log odds</span></div>",
+      "css": ".ds-evidence-row { display: grid; grid-template-columns: 4rem 1fr auto; gap: .8rem; align-items: start; padding: .78rem .1rem; border-bottom: 1px solid var(--line); } .ds-evidence-code { color: var(--cobalt-dark); font: 800 .76rem/1.4 sans-serif; } .ds-evidence-copy { color: var(--ink); font: 400 .9rem/1.4 sans-serif; } .ds-evidence-weight { color: var(--ink-soft); font: 400 .76rem/1.4 sans-serif; font-variant-numeric: tabular-nums; } @media (max-width: 760px) { .ds-evidence-row { grid-template-columns: 3.2rem 1fr; } .ds-evidence-weight { grid-column: 2; } }"
+    },
+    {
+      "name": "Data-gap Notice",
+      "kind": "card",
+      "refersTo": "notice-exception",
+      "description": "A restrained amber exception for incomplete or unavailable evidence.",
+      "html": "<aside class=\"ds-notice ds-notice-amber\">Data-gap guardrail active: the case remains in human review even when the point estimate is low.</aside>",
+      "css": ".ds-notice { padding: .85rem 1rem; border: 1px solid #e7c98a; border-top: 3px solid var(--amber); border-radius: 0; background: var(--amber-bg); color: #6b430e; font: 400 .86rem/1.4 sans-serif; }"
+    },
+    {
+      "name": "Enhanced-review Notice",
+      "kind": "card",
+      "description": "A red caution band for enhanced human review without verdict language.",
+      "html": "<aside class=\"ds-notice-red\">Enhanced review is required. Do not interpret this route as an approval, decline, price, or adverse-action reason.</aside>",
+      "css": ".ds-notice-red { padding: .85rem 1rem; border: 1px solid #e0afaa; border-top: 3px solid var(--red); border-radius: 0; background: var(--red-bg); color: #722323; font: 400 .86rem/1.4 sans-serif; }"
+    },
+    {
+      "name": "Ready Notice",
+      "kind": "card",
+      "description": "A green readiness band for a complete evidence package entering human review.",
+      "html": "<aside class=\"ds-notice-green\">The evidence package is ready for its designated human review queue.</aside>",
+      "css": ".ds-notice-green { padding: .85rem 1rem; border: 1px solid #a9d2bf; border-top: 3px solid var(--green); border-radius: 0; background: var(--green-bg); color: #174e3d; font: 400 .86rem/1.4 sans-serif; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Evidence Docket",
+    "overview": "CrediFast presents credit review as a composed evidence file, not a verdict machine. Its visual authority comes from ink-on-paper contrast, editorial hierarchy, ruled ledgers, square docket marks, and explicit source coverage. The interface feels calm, exacting, and reviewable: it gives the human operator room to inspect what is known, what is missing, and what must happen next.\n\nThe system pairs one locally bundled Source Serif 4 display face with the Streamlit runtime's practical sans-serif body. Cobalt is reserved for action and navigation; amber, red, and green are restrained operational signals that always arrive with words. Dense information is divided by rules and tonal surfaces rather than decorative imagery, gradients, or floating cards.",
+    "keyCharacteristics": [
+      "Editorial thesis headlines paired with operational sans-serif copy.",
+      "Ink navy on warm paper, with white working surfaces and cobalt actions.",
+      "Ruled evidence rows, ledger tables, tabular numerals, and square docket labels.",
+      "Explicit data gaps and human-review routes instead of autonomous verdict language.",
+      "Flat, border-led depth with no shadows or gradients at rest.",
+      "A desktop two-column workbench that becomes a single reading column on mobile."
+    ],
+    "rules": [
+      {
+        "name": "The Cobalt Action Rule",
+        "body": "Reserve Action Cobalt for the current navigation state and consequential reviewer actions; evidence itself remains ink-led.",
+        "section": "colors"
+      },
+      {
+        "name": "The Exception Color Rule",
+        "body": "Amber, red, and green always accompany explicit text and never carry risk, confidence, or status alone.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Serif Move Rule",
+        "body": "Source Serif 4 belongs to page-level thesis headlines; operational controls and evidence remain sans-serif.",
+        "section": "typography"
+      },
+      {
+        "name": "The Ledger Numeral Rule",
+        "body": "Scores, percentages, weights, and right-aligned metrics use tabular numerals so comparisons hold their columns.",
+        "section": "typography"
+      },
+      {
+        "name": "The First Viewport Rule",
+        "body": "On desktop, keep case intake, Evaluate case, the current human-review route, and the evidence summary together before the long-form ledgers.",
+        "section": "layout"
+      },
+      {
+        "name": "The Flat Docket Rule",
+        "body": "Use borders, rule weight, and surface tone for depth; do not add persistent shadows, gradients, glass effects, or floating card stacks.",
+        "section": "elevation"
+      },
+      {
+        "name": "The No Pill Rule",
+        "body": "Buttons, labels, filters, and status treatments stay square or nearly square; reserve circles for point indicators, not text containers.",
+        "section": "shapes"
+      },
+      {
+        "name": "The Human Route Rule",
+        "body": "The routing band names a human queue and explains why; it never presents approval, decline, pricing, or adverse-action language.",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "Do lead with evidence, source coverage, limitations, and the next human-review action.",
+      "Do keep the ink-and-paper hierarchy, restrained cobalt actions, ruled rows, square labels, and tabular quantitative outputs.",
+      "Do pair every semantic color with a label or sentence that explains the state.",
+      "Do preserve the desktop two-column first viewport and the single-column mobile reading order.",
+      "Do disable the docket-settle animation when reduced motion is requested."
+    ],
+    "donts": [
+      "Don't turn the score or route into an autonomous approval, decline, price, or adverse-action verdict.",
+      "Don't add gradients, persistent shadows, glass surfaces, decorative banking imagery, or generic KPI-card grids.",
+      "Don't use pills or excessive rounding; the docket’s authority comes from near-square geometry and rules.",
+      "Don't use red, amber, or green without explicit supporting copy.",
+      "Don't introduce another display family or spread the serif into controls, tables, and routine evidence copy."
+    ]
+  }
+}

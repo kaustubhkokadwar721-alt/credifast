@@ -1,0 +1,12 @@
+{
+  "policy_version": "demo-policy-1.0.0",
+  "maximum_debt_service_ratio": 0.4,
+  "minimum_data_coverage": 0.6,
+  "risk_bands": [
+    {"grade": "A", "maximum_probability": 0.02},
+    {"grade": "B", "maximum_probability": 0.05},
+    {"grade": "C", "maximum_probability": 0.1},
+    {"grade": "D", "maximum_probability": 0.2},
+    {"grade": "E", "maximum_probability": 1.0}
+  ]
+}

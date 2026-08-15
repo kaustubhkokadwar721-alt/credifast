@@ -1,0 +1,29 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+.playwright-cli/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+data/raw/
+data/interim/
+data/processed/
+artifacts/models/
+artifacts/features/
+artifacts/*.log
+mlruns/
+output/playwright/
+dist/
+build/
+
+# Exported intake workbooks contain one applicant's row-level Home Credit records
+# (application row, bureau tradelines, monthly delinquency). Row-level data stays out of Git.
+# Regenerate with: python scripts/export_demo_workbook.py --application-id <id>
+examples/intake_workbook/
+examples/intake_workbook.xlsx

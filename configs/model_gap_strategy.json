@@ -1,0 +1,67 @@
+{
+  "policy_version": "history-gap-strategy-0.1.0",
+  "status": "research_candidate_holdout_not_evaluated",
+  "component_probability_space": "raw_model_probability",
+  "history_weights": {
+    "full_4_to_5_sources": 1.0,
+    "partial_2_to_3_sources": 0.75,
+    "thin_0_to_1_sources": 1.0
+  },
+  "fit_selected_candidate_history_weights": {
+    "full_4_to_5_sources": 0.75,
+    "partial_2_to_3_sources": 0.75,
+    "thin_0_to_1_sources": 1.0
+  },
+  "promotion_decisions": {
+    "full_4_to_5_sources": {
+      "selected_candidate_history_weight": 0.75,
+      "promoted_history_weight": 1.0,
+      "candidate_promoted": false,
+      "decision": "retain_existing_history_champion",
+      "criteria": {
+        "brier_improves": false,
+        "log_loss_improves": false,
+        "average_precision_not_worse": true,
+        "bootstrap_brier_support_at_least_90_percent": false
+      }
+    },
+    "partial_2_to_3_sources": {
+      "selected_candidate_history_weight": 0.75,
+      "promoted_history_weight": 0.75,
+      "candidate_promoted": true,
+      "decision": "promote_fit_selected_blend",
+      "criteria": {
+        "brier_improves": true,
+        "log_loss_improves": true,
+        "average_precision_not_worse": true,
+        "bootstrap_brier_support_at_least_90_percent": true
+      }
+    },
+    "thin_0_to_1_sources": {
+      "selected_candidate_history_weight": 1.0,
+      "promoted_history_weight": 1.0,
+      "candidate_promoted": false,
+      "decision": "retain_existing_history_champion",
+      "criteria": {
+        "brier_improves": false,
+        "log_loss_improves": false,
+        "average_precision_not_worse": true,
+        "bootstrap_brier_support_at_least_90_percent": false
+      }
+    }
+  },
+  "selection_population": "calibrator_fit",
+  "evaluation_population": "calibrator_evaluation",
+  "selection_rule": "minimum Brier score, then log loss, then lower history weight",
+  "missing_feature_store_row": {
+    "history_segment": "thin_0_to_1_sources",
+    "availability_flags": 0,
+    "force_route": "MANUAL_REVIEW_DATA_LIMITED",
+    "quality_flag": "FEATURE_STORE_ROW_MISSING"
+  },
+  "controls": {
+    "holdout_evaluated": false,
+    "production_approved": false,
+    "autonomous_decision_allowed": false
+  }
+}

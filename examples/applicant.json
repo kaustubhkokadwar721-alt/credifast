@@ -1,0 +1,16 @@
+{
+  "application_id": "DEMO-10042",
+  "requested_amount": 450000,
+  "annual_income": 900000,
+  "annual_annuity": 108000,
+  "family_size": 3,
+  "employment_years": 6.5,
+  "existing_monthly_obligations": 18000,
+  "active_accounts": 3,
+  "total_outstanding": 210000,
+  "credit_utilization": 0.42,
+  "recent_inquiries": 1,
+  "delinquent_accounts": 0,
+  "bureau_history_months": 72,
+  "data_coverage": 0.94
+}

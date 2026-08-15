@@ -1,0 +1,28 @@
+{
+  "bundle_version": "0.1.0",
+  "status": "research_champion_holdout_not_evaluated",
+  "model": {
+    "name": "history-enriched-lightgbm-challenger",
+    "version": "0.2.0",
+    "sha256": "1d41d5b4b6ac4bf3d6f88b6cd5416724f7f6640a04fd125fe97b28ae8b6eca9d",
+    "selected_features": 257,
+    "best_iteration": 825
+  },
+  "calibration": {
+    "method": "identity",
+    "version": "0.1.0",
+    "sha256": "2a69c840f88896de466360a0f8f7923f79f3bcdc2acc03e082da8a7537402d5d",
+    "selection_rule": "minimum Brier score, then minimum log loss",
+    "fit_population": "all 46,127 calibration rows after method selection"
+  },
+  "data": {
+    "history_features_sha256": "b03f7a8a9718e35d954d392dce6c81d95e8cfc6774e43484240bd3f23b49604f",
+    "grain": "one row per SK_ID_CURR"
+  },
+  "controls": {
+    "holdout_evaluated": false,
+    "protected_audit_fields_used_for_prediction": false,
+    "policy_separate_from_model": true,
+    "production_approved": false
+  }
+}

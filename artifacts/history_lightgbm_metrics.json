@@ -1,0 +1,119 @@
+{
+  "run_version": "1.0.0",
+  "model_name": "history-enriched-lightgbm-challenger",
+  "model_version": "0.2.0",
+  "application_source": "application_train.csv",
+  "history_source": "history_features.parquet",
+  "random_seed": 42,
+  "best_iteration": 825,
+  "join_summary": {
+    "application_rows": 307511,
+    "history_rows": 356255,
+    "application_rows_matched": 307511,
+    "application_match_rate": 1.0
+  },
+  "feature_summary": {
+    "history_features_available": 150,
+    "selected": 257,
+    "numeric": 247,
+    "categorical": 10,
+    "transformed": 465
+  },
+  "calibration_partition_metrics": {
+    "rows": 46127,
+    "base_rate": 0.08073362672621241,
+    "roc_auc": 0.7813781238194923,
+    "average_precision": 0.2739046039082563,
+    "brier_score": 0.06628769570603345,
+    "base_rate_brier_score": 0.07421570824184502,
+    "brier_skill_score": 0.1068239153627254,
+    "log_loss": 0.23888526676115873,
+    "precision_at_0_5": 0.5476190476190477,
+    "recall_at_0_5": 0.03705692803437164,
+    "top_10_percent": {
+      "population_share": 0.1000065037830338,
+      "probability_threshold": 0.186497420224234,
+      "selected_event_rate": 0.29655321916323435,
+      "lift": 3.6732304888137786,
+      "event_capture_rate": 0.3673469387755102
+    },
+    "top_20_percent": {
+      "population_share": 0.2000130075660676,
+      "probability_threshold": 0.11836878670785164,
+      "selected_event_rate": 0.22555820507262087,
+      "lift": 2.7938569617037547,
+      "event_capture_rate": 0.5588077336197637
+    },
+    "calibration_deciles": [
+      {
+        "count": 4613,
+        "mean_probability": 0.011523788201242847,
+        "observed_rate": 0.008671146759158898
+      },
+      {
+        "count": 4613,
+        "mean_probability": 0.01851610191564432,
+        "observed_rate": 0.017775850856275744
+      },
+      {
+        "count": 4612,
+        "mean_probability": 0.02507487978288456,
+        "observed_rate": 0.023633998265394623
+      },
+      {
+        "count": 4613,
+        "mean_probability": 0.032410240857277096,
+        "observed_rate": 0.03078257099501409
+      },
+      {
+        "count": 4613,
+        "mean_probability": 0.04185974643824254,
+        "observed_rate": 0.03836982440927813
+      },
+      {
+        "count": 4612,
+        "mean_probability": 0.054167528669975526,
+        "observed_rate": 0.056157849089332176
+      },
+      {
+        "count": 4613,
+        "mean_probability": 0.0717235215146044,
+        "observed_rate": 0.0819423368740516
+      },
+      {
+        "count": 4612,
+        "mean_probability": 0.09900334158984611,
+        "observed_rate": 0.09887250650477017
+      },
+      {
+        "count": 4613,
+        "mean_probability": 0.14801740061565738,
+        "observed_rate": 0.15456319098200738
+      },
+      {
+        "count": 4613,
+        "mean_probability": 0.29615189992070035,
+        "observed_rate": 0.29655321916323435
+      }
+    ]
+  },
+  "holdout_evaluated": false,
+  "holdout_note": "The final holdout remains unscored until champion selection and calibration are frozen.",
+  "artifacts": {
+    "model": {
+      "path": "artifacts\\models\\history_lightgbm.joblib",
+      "sha256": "1d41d5b4b6ac4bf3d6f88b6cd5416724f7f6640a04fd125fe97b28ae8b6eca9d"
+    },
+    "history_features": {
+      "path": "data\\processed\\history_features.parquet",
+      "sha256": "b03f7a8a9718e35d954d392dce6c81d95e8cfc6774e43484240bd3f23b49604f"
+    }
+  },
+  "environment": {
+    "python": "3.13.3",
+    "pandas": "3.0.5",
+    "numpy": "2.5.2",
+    "scikit_learn": "1.9.0",
+    "lightgbm": "4.7.0"
+  }
+}

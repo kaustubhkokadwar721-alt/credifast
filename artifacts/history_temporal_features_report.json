@@ -1,0 +1,44 @@
+{
+  "run_version": "2.0.0-research",
+  "dataset": "home-credit-default-risk",
+  "grain": "one additive temporal row per train or test SK_ID_CURR",
+  "target_used": false,
+  "holdout_policy": "features may be built for all IDs, but challenger training/evaluation must exclude the sealed holdout",
+  "row_count": 356255,
+  "unique_keys": 356255,
+  "duplicate_keys": 0,
+  "feature_count_excluding_key": 111,
+  "feature_groups": {
+    "installment_temporal": 57,
+    "previous_velocity": 14,
+    "pos_obligation": 12,
+    "credit_card_temporal": 13,
+    "bureau_burden": 8,
+    "credit_cycling": 2,
+    "availability": 5
+  },
+  "half_lives": {
+    "installment_days": [
+      90,
+      180,
+      365
+    ],
+    "monthly_history": [
+      3,
+      6,
+      12
+    ]
+  },
+  "artifact": {
+    "path": "data\\processed\\history_temporal_features.parquet",
+    "bytes": 31743129,
+    "sha256": "d5dd527234fdef457a1318892e54286c538e898a89c21076cf6cc4cd1e7f8511"
+  },
+  "leakage_controls": [
+    "TARGET is never selected.",
+    "Only non-positive relative event dates are expected and separately validated.",
+    "Multiple payment rows are reconciled to installment grain before sequence features.",
+    "Every source block is aggregated before the application-grain join.",
+    "Credit cycling is labeled as a multi-source stress proxy, not verified EMI funding."
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "policy_version": "history-confidence-0.1.0",
+  "minimum_sources_for_standard_route": 4,
+  "high_confidence_boundary_distance": 0.01,
+  "risk_band_boundaries": [0.02, 0.05, 0.10, 0.20],
+  "segments": {
+    "full_4_to_5_sources": "STANDARD_OR_BOUNDARY_REVIEW",
+    "partial_2_to_3_sources": "MANUAL_REVIEW_DATA_LIMITED",
+    "thin_0_to_1_sources": "MANUAL_REVIEW_DATA_LIMITED"
+  },
+  "status": "research_only_not_an_approval_policy"
+}

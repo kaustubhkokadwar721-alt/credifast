@@ -1,0 +1,31 @@
+{
+  "run_version": "1.0.0",
+  "rows": 250,
+  "perturbation": {
+    "columns": [
+      "AMT_INCOME_TOTAL",
+      "AMT_CREDIT",
+      "AMT_ANNUITY",
+      "AMT_GOODS_PRICE"
+    ],
+    "relative_increase": 0.005,
+    "interpretation": "small simultaneous change used as a local robustness probe"
+  },
+  "reason_stability": {
+    "top_adverse_reason_match_rate": 0.98,
+    "exact_ordered_top_three_match_rate": 0.952,
+    "mean_top_three_jaccard": 0.99
+  },
+  "prediction_stability": {
+    "absolute_probability_change_median": 0.0,
+    "absolute_probability_change_p95": 0.007158965204206347,
+    "absolute_probability_change_maximum": 0.047694749019326244,
+    "risk_grade_change_rate": 0.024,
+    "review_route_change_rate": 0.012
+  },
+  "holdout_evaluated": false,
+  "limitations": [
+    "This probes one local perturbation pattern and does not establish global explanation robustness.",
+    "TreeSHAP reasons explain the model, not causality or applicant actionability."
+  ]
+}

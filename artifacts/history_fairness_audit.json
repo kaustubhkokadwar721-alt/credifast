@@ -1,0 +1,550 @@
+{
+  "run_version": "1.0.0",
+  "model_scope": "history-enriched LightGBM with selected identity calibration",
+  "assessment": "share_with_caveats",
+  "population": {
+    "partition": "calibration evaluation half",
+    "rows": 23064,
+    "target_rate": 0.08073187651751648,
+    "probability_field": "selection_evaluation_probability"
+  },
+  "protected_field_controls": {
+    "CODE_GENDER": {
+      "selected_for_prediction": false,
+      "excluded_by_policy": true
+    },
+    "DAYS_BIRTH": {
+      "selected_for_prediction": false,
+      "excluded_by_policy": true
+    }
+  },
+  "review_capacity_definition": {
+    "population_share": 0.2,
+    "global_probability_threshold": 0.1196053492028156,
+    "meaning": "Audit proxy for a fixed human-review queue; not an approval, decline, or pricing threshold."
+  },
+  "overall": {
+    "rows": 23064,
+    "events": 1862,
+    "non_events": 21202,
+    "event_rate": 0.08073187651751648,
+    "event_rate_95_percent_interval": [
+      0.07728543220711144,
+      0.0843179663527261
+    ],
+    "mean_probability": 0.08063064203959862,
+    "review_rate": 0.2000086715227194,
+    "review_rate_95_percent_interval": [
+      0.19489636925761825,
+      0.20522089182154576
+    ],
+    "true_positive_rate_at_review_capacity": 0.5622986036519871,
+    "true_positive_rate_95_percent_interval": [
+      0.5396591593563351,
+      0.5846815135067847
+    ],
+    "false_positive_rate_at_review_capacity": 0.16819168003018584,
+    "false_positive_rate_95_percent_interval": [
+      0.1632170947829604,
+      0.17328648449493064
+    ],
+    "eligible_for_comparison": true,
+    "suppression_rule": {
+      "minimum_rows": 1,
+      "minimum_events": 1
+    },
+    "roc_auc": 0.779439114178779,
+    "average_precision": 0.285348521890447,
+    "brier_score": 0.06583066034507437,
+    "expected_calibration_error": 0.003213940640456003,
+    "calibration_intercept": 0.02837941172783775,
+    "calibration_slope": 1.0132761927091238
+  },
+  "dimensions": {
+    "gender": {
+      "groups": {
+        "F": {
+          "rows": 15150,
+          "events": 1087,
+          "non_events": 14063,
+          "event_rate": 0.07174917491749175,
+          "event_rate_95_percent_interval": [
+            0.0677473083823599,
+            0.07596817033823067
+          ],
+          "mean_probability": 0.07577086027251143,
+          "review_rate": 0.1796039603960396,
+          "review_rate_95_percent_interval": [
+            0.17357290942287007,
+            0.1857974564386815
+          ],
+          "true_positive_rate_at_review_capacity": 0.5298988040478381,
+          "true_positive_rate_95_percent_interval": [
+            0.5001745285975733,
+            0.5594124911860506
+          ],
+          "false_positive_rate_at_review_capacity": 0.15252791011875133,
+          "false_positive_rate_95_percent_interval": [
+            0.14668055888940484,
+            0.15856504791404413
+          ],
+          "eligible_for_comparison": true,
+          "suppression_rule": {
+            "minimum_rows": 200,
+            "minimum_events": 20
+          },
+          "roc_auc": 0.7759354163983195,
+          "average_precision": 0.2750004171632124,
+          "brier_score": 0.05934214545847524,
+          "expected_calibration_error": 0.004478987289700716,
+          "calibration_intercept": -0.05682664147380515,
+          "calibration_slope": 1.004347740668908
+        },
+        "M": {
+          "rows": 7913,
+          "events": 775,
+          "non_events": 7138,
+          "event_rate": 0.09794009857197017,
+          "event_rate_95_percent_interval": [
+            0.09158475136978858,
+            0.10468564009541392
+          ],
+          "mean_probability": 0.08993123682314944,
+          "review_rate": 0.23910021483634525,
+          "review_rate_95_percent_interval": [
+            0.22983016107793908,
+            0.24862346871301189
+          ],
+          "true_positive_rate_at_review_capacity": 0.607741935483871,
+          "true_positive_rate_95_percent_interval": [
+            0.5729156308783763,
+            0.64150537590914
+          ],
+          "false_positive_rate_at_review_capacity": 0.19907537125245167,
+          "false_positive_rate_95_percent_interval": [
+            0.18997487390897705,
+            0.20849960359833708
+          ],
+          "eligible_for_comparison": true,
+          "suppression_rule": {
+            "minimum_rows": 200,
+            "minimum_events": 20
+          },
+          "roc_auc": 0.7783640488435362,
+          "average_precision": 0.301906711816068,
+          "brier_score": 0.07826015266668387,
+          "expected_calibration_error": 0.010904333407614392,
+          "calibration_intercept": 0.13289098681345857,
+          "calibration_slope": 1.0136433435418788
+        },
+        "Unknown": {
+          "rows": 1,
+          "events": 0,
+          "non_events": 1,
+          "event_rate": 0.0,
+          "event_rate_95_percent_interval": [
+            0.0,
+            0.7934567085261071
+          ],
+          "mean_probability": 0.11071789117287956,
+          "review_rate": 0.0,
+          "review_rate_95_percent_interval": [
+            0.0,
+            0.7934567085261071
+          ],
+          "true_positive_rate_at_review_capacity": null,
+          "true_positive_rate_95_percent_interval": null,
+          "false_positive_rate_at_review_capacity": 0.0,
+          "false_positive_rate_95_percent_interval": [
+            0.0,
+            0.7934567085261071
+          ],
+          "eligible_for_comparison": false,
+          "suppression_rule": {
+            "minimum_rows": 200,
+            "minimum_events": 20
+          },
+          "suppressed_metrics": [
+            "roc_auc",
+            "average_precision",
+            "brier_score",
+            "expected_calibration_error",
+            "calibration_intercept",
+            "calibration_slope"
+          ]
+        }
+      },
+      "observed_gaps": {
+        "event_rate": {
+          "maximum_group": "M",
+          "maximum": 0.09794009857197017,
+          "minimum_group": "F",
+          "minimum": 0.07174917491749175,
+          "absolute_gap": 0.02619092365447842
+        },
+        "mean_probability": {
+          "maximum_group": "M",
+          "maximum": 0.08993123682314944,
+          "minimum_group": "F",
+          "minimum": 0.07577086027251143,
+          "absolute_gap": 0.01416037655063801
+        },
+        "review_rate": {
+          "maximum_group": "M",
+          "maximum": 0.23910021483634525,
+          "minimum_group": "F",
+          "minimum": 0.1796039603960396,
+          "absolute_gap": 0.05949625444030565
+        },
+        "true_positive_rate_at_review_capacity": {
+          "maximum_group": "M",
+          "maximum": 0.607741935483871,
+          "minimum_group": "F",
+          "minimum": 0.5298988040478381,
+          "absolute_gap": 0.07784313143603294
+        },
+        "false_positive_rate_at_review_capacity": {
+          "maximum_group": "M",
+          "maximum": 0.19907537125245167,
+          "minimum_group": "F",
+          "minimum": 0.15252791011875133,
+          "absolute_gap": 0.04654746113370034
+        },
+        "roc_auc": {
+          "maximum_group": "M",
+          "maximum": 0.7783640488435362,
+          "minimum_group": "F",
+          "minimum": 0.7759354163983195,
+          "absolute_gap": 0.0024286324452166275
+        },
+        "average_precision": {
+          "maximum_group": "M",
+          "maximum": 0.301906711816068,
+          "minimum_group": "F",
+          "minimum": 0.2750004171632124,
+          "absolute_gap": 0.0269062946528556
+        },
+        "brier_score": {
+          "maximum_group": "M",
+          "maximum": 0.07826015266668387,
+          "minimum_group": "F",
+          "minimum": 0.05934214545847524,
+          "absolute_gap": 0.01891800720820863
+        },
+        "expected_calibration_error": {
+          "maximum_group": "M",
+          "maximum": 0.010904333407614392,
+          "minimum_group": "F",
+          "minimum": 0.004478987289700716,
+          "absolute_gap": 0.006425346117913676
+        }
+      }
+    },
+    "age_band": {
+      "groups": {
+        "18-24": {
+          "rows": 639,
+          "events": 78,
+          "non_events": 561,
+          "event_rate": 0.12206572769953052,
+          "event_rate_95_percent_interval": [
+            0.09891717463788473,
+            0.14973132601919786
+          ],
+          "mean_probability": 0.14308382030944547,
+          "review_rate": 0.4616588419405321,
+          "review_rate_95_percent_interval": [
+            0.423348906213438,
+            0.5004270286358312
+          ],
+          "true_positive_rate_at_review_capacity": 0.8205128205128205,
+          "true_positive_rate_95_percent_interval": [
+            0.7209744070847772,
+            0.8899618404959151
+          ],
+          "false_positive_rate_at_review_capacity": 0.4117647058823529,
+          "false_positive_rate_95_percent_interval": [
+            0.37177282584619475,
+            0.4529567974676688
+          ],
+          "eligible_for_comparison": true,
+          "suppression_rule": {
+            "minimum_rows": 200,
+            "minimum_events": 20
+          },
+          "roc_auc": 0.734517116870058,
+          "average_precision": 0.27234970421830007,
+          "brier_score": 0.10019164563608053,
+          "expected_calibration_error": 0.04624979989313446,
+          "calibration_intercept": -0.33633400157824506,
+          "calibration_slope": 0.9130608207835564
+        },
+        "25-34": {
+          "rows": 5131,
+          "events": 545,
+          "non_events": 4586,
+          "event_rate": 0.1062171116741376,
+          "event_rate_95_percent_interval": [
+            0.09807893344570251,
+            0.1149445023697275
+          ],
+          "mean_probability": 0.11041263580086083,
+          "review_rate": 0.3219645293315143,
+          "review_rate_95_percent_interval": [
+            0.30931726934052195,
+            0.3348781815960755
+          ],
+          "true_positive_rate_at_review_capacity": 0.7155963302752294,
+          "true_positive_rate_95_percent_interval": [
+            0.6763143059816281,
+            0.7518602347237413
+          ],
+          "false_positive_rate_at_review_capacity": 0.27518534670737027,
+          "false_positive_rate_95_percent_interval": [
+            0.26245152164069185,
+            0.28829550196029696
+          ],
+          "eligible_for_comparison": true,
+          "suppression_rule": {
+            "minimum_rows": 200,
+            "minimum_events": 20
+          },
+          "roc_auc": 0.7818558276685724,
+          "average_precision": 0.3542592010869039,
+          "brier_score": 0.0818502885104812,
+          "expected_calibration_error": 0.011948054840693952,
+          "calibration_intercept": 0.09740950343343484,
+          "calibration_slope": 1.0856571267007442
+        },
+        "35-44": {
+          "rows": 6320,
+          "events": 536,
+          "non_events": 5784,
+          "event_rate": 0.08481012658227848,
+          "event_rate_95_percent_interval": [
+            0.07819106307121954,
+            0.09193362822402099
+          ],
+          "mean_probability": 0.08060965556063608,
+          "review_rate": 0.19525316455696204,
+          "review_rate_95_percent_interval": [
+            0.18566654487250112,
+            0.2052100387535024
+          ],
+          "true_positive_rate_at_review_capacity": 0.5597014925373134,
+          "true_positive_rate_95_percent_interval": [
+            0.5173975716815385,
+            0.601155722469931
+          ],
+          "false_positive_rate_at_review_capacity": 0.16147994467496543,
+          "false_positive_rate_95_percent_interval": [
+            0.1522218516837704,
+            0.17118741369764573
+          ],
+          "eligible_for_comparison": true,
+          "suppression_rule": {
+            "minimum_rows": 200,
+            "minimum_events": 20
+          },
+          "roc_auc": 0.7976372029892034,
+          "average_precision": 0.3098238968757152,
+          "brier_score": 0.06783559569657106,
+          "expected_calibration_error": 0.008657997933604389,
+          "calibration_intercept": 0.22438604590542457,
+          "calibration_slope": 1.0802106167340102
+        },
+        "45-54": {
+          "rows": 5395,
+          "events": 406,
+          "non_events": 4989,
+          "event_rate": 0.0752548656163114,
+          "event_rate_95_percent_interval": [
+            0.06851366590528882,
+            0.08260052866563541
+          ],
+          "mean_probability": 0.07140216738276206,
+          "review_rate": 0.16107506950880446,
+          "review_rate_95_percent_interval": [
+            0.15150750449404937,
+            0.17112496540467853
+          ],
+          "true_positive_rate_at_review_capacity": 0.4852216748768473,
+          "true_positive_rate_95_percent_interval": [
+            0.43697304641796925,
+            0.5337473489738116
+          ],
+          "false_positive_rate_at_review_capacity": 0.13469633193024655,
+          "false_positive_rate_95_percent_interval": [
+            0.12550335724124667,
+            0.14445145165956041
+          ],
+          "eligible_for_comparison": true,
+          "suppression_rule": {
+            "minimum_rows": 200,
+            "minimum_events": 20
+          },
+          "roc_auc": 0.7691956787691543,
+          "average_precision": 0.25838551085748956,
+          "brier_score": 0.06276191908092367,
+          "expected_calibration_error": 0.006449816483304346,
+          "calibration_intercept": 0.04035124908549942,
+          "calibration_slope": 0.9896104812629651
+        },
+        "55-64": {
+          "rows": 4633,
+          "events": 250,
+          "non_events": 4383,
+          "event_rate": 0.05396071659831642,
+          "event_rate_95_percent_interval": [
+            0.04781639837010479,
+            0.06084411744307286
+          ],
+          "mean_probability": 0.05786669512222483,
+          "review_rate": 0.11007986186056551,
+          "review_rate_95_percent_interval": [
+            0.10138816406107287,
+            0.119417653416065
+          ],
+          "true_positive_rate_at_review_capacity": 0.344,
+          "true_positive_rate_95_percent_interval": [
+            0.2878738024449977,
+            0.40484795789688477
+          ],
+          "false_positive_rate_at_review_capacity": 0.09673739447866758,
+          "false_positive_rate_95_percent_interval": [
+            0.08833590305268463,
+            0.10584516790278367
+          ],
+          "eligible_for_comparison": true,
+          "suppression_rule": {
+            "minimum_rows": 200,
+            "minimum_events": 20
+          },
+          "roc_auc": 0.7275080994752452,
+          "average_precision": 0.16413395980020934,
+          "brier_score": 0.04844664581099013,
+          "expected_calibration_error": 0.013327188366589523,
+          "calibration_intercept": -0.3803547644948595,
+          "calibration_slope": 0.8771500089114935
+        },
+        "65+": {
+          "rows": 946,
+          "events": 47,
+          "non_events": 899,
+          "event_rate": 0.049682875264270614,
+          "event_rate_95_percent_interval": [
+            0.03756593184009438,
+            0.06544240133882724
+          ],
+          "mean_probability": 0.04116619223558229,
+          "review_rate": 0.056025369978858354,
+          "review_rate_95_percent_interval": [
+            0.0430859500991865,
+            0.07255606852791932
+          ],
+          "true_positive_rate_at_review_capacity": 0.2127659574468085,
+          "true_positive_rate_95_percent_interval": [
+            0.11989580124247315,
+            0.34904302050979275
+          ],
+          "false_positive_rate_at_review_capacity": 0.047830923248053395,
+          "false_positive_rate_95_percent_interval": [
+            0.03570185878518389,
+            0.06380795556098715
+          ],
+          "eligible_for_comparison": true,
+          "suppression_rule": {
+            "minimum_rows": 200,
+            "minimum_events": 20
+          },
+          "roc_auc": 0.7757082337348827,
+          "average_precision": 0.15865611109568686,
+          "brier_score": 0.0449759302366081,
+          "expected_calibration_error": 0.01392045928182859,
+          "calibration_intercept": 0.30133390645622643,
+          "calibration_slope": 1.033135961834822
+        }
+      },
+      "observed_gaps": {
+        "event_rate": {
+          "maximum_group": "18-24",
+          "maximum": 0.12206572769953052,
+          "minimum_group": "65+",
+          "minimum": 0.049682875264270614,
+          "absolute_gap": 0.07238285243525991
+        },
+        "mean_probability": {
+          "maximum_group": "18-24",
+          "maximum": 0.14308382030944547,
+          "minimum_group": "65+",
+          "minimum": 0.04116619223558229,
+          "absolute_gap": 0.10191762807386318
+        },
+        "review_rate": {
+          "maximum_group": "18-24",
+          "maximum": 0.4616588419405321,
+          "minimum_group": "65+",
+          "minimum": 0.056025369978858354,
+          "absolute_gap": 0.4056334719616737
+        },
+        "true_positive_rate_at_review_capacity": {
+          "maximum_group": "18-24",
+          "maximum": 0.8205128205128205,
+          "minimum_group": "65+",
+          "minimum": 0.2127659574468085,
+          "absolute_gap": 0.607746863066012
+        },
+        "false_positive_rate_at_review_capacity": {
+          "maximum_group": "18-24",
+          "maximum": 0.4117647058823529,
+          "minimum_group": "65+",
+          "minimum": 0.047830923248053395,
+          "absolute_gap": 0.36393378263429954
+        },
+        "roc_auc": {
+          "maximum_group": "35-44",
+          "maximum": 0.7976372029892034,
+          "minimum_group": "55-64",
+          "minimum": 0.7275080994752452,
+          "absolute_gap": 0.07012910351395818
+        },
+        "average_precision": {
+          "maximum_group": "25-34",
+          "maximum": 0.3542592010869039,
+          "minimum_group": "65+",
+          "minimum": 0.15865611109568686,
+          "absolute_gap": 0.19560308999121703
+        },
+        "brier_score": {
+          "maximum_group": "18-24",
+          "maximum": 0.10019164563608053,
+          "minimum_group": "65+",
+          "minimum": 0.0449759302366081,
+          "absolute_gap": 0.05521571539947243
+        },
+        "expected_calibration_error": {
+          "maximum_group": "18-24",
+          "maximum": 0.04624979989313446,
+          "minimum_group": "45-54",
+          "minimum": 0.006449816483304346,
+          "absolute_gap": 0.03979998340983012
+        }
+      }
+    }
+  },
+  "validation": {
+    "join_rows": 23064,
+    "unique_application_ids": 23064,
+    "duplicate_application_ids": 0,
+    "small_group_suppression": "rows below 200 or fewer than 20 events/non-events",
+    "confidence_intervals": "95% Wilson intervals for rates",
+    "holdout_evaluated": false
+  },
+  "required_caveats": [
+    "Gender and age are audit-only and excluded from prediction, but other inputs may remain correlated proxies.",
+    "Observed gaps are descriptive and do not establish discrimination, causality, or legal compliance.",
+    "The review route is a fixed-capacity audit proxy, not a lending decision threshold.",
+    "Competition data and a random split do not represent a production Indian lending population.",
+    "Independent legal, compliance, and model-risk review is required before any real lending use."
+  ]
+}

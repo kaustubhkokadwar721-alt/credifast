@@ -1,0 +1,16 @@
+{
+  "status": "diagnostic_only_frozen_holdout_not_retuned",
+  "holdout_rows": 46127,
+  "raw_factor_count": 257,
+  "transformed_factor_count": 465,
+  "automatic_missing_indicator_count": 208,
+  "correlation_sample_rows": 25000,
+  "tree_shap_space": "uncalibrated raw log odds",
+  "files": [
+    "model_factor_audit.csv",
+    "transformed_factor_audit.csv",
+    "factor_correlation_pairs.csv",
+    "factor_group_summary.csv",
+    "README.md"
+  ]
+}

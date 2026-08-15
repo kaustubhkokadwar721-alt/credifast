@@ -1,0 +1,26 @@
+{
+  "run_version": "2.0.0-research",
+  "dataset": "history_temporal_features.parquet",
+  "grain": "one additive temporal row per train or test SK_ID_CURR",
+  "summary": {
+    "rows": 356255,
+    "unique_keys": 356255,
+    "expected_rows": 356255,
+    "feature_count_excluding_key": 111,
+    "ready_for_experiment": true
+  },
+  "checks": {
+    "target_absent": true,
+    "future_relative_events": {},
+    "rate_violations": {},
+    "negative_feature_violations": {},
+    "non_finite_features": {},
+    "cycling_bounds": {
+      "minimum": 0,
+      "maximum": 5,
+      "invalid_count_rows": 0,
+      "invalid_flag_rows": 0
+    }
+  },
+  "findings": []
+}

@@ -1,0 +1,862 @@
+{
+  "profile_version": "1.0.0",
+  "table": "application_train",
+  "grain": "one labelled current loan application",
+  "source_file": "application_train.csv",
+  "summary": {
+    "row_count": 307511,
+    "column_count": 122,
+    "unique_applicant_keys": 307511,
+    "duplicate_key_count": 0,
+    "target_counts": {
+      "1": 24825,
+      "0": 282686
+    },
+    "target_prevalence": 0.08072881945686496,
+    "maximum_finding_severity": "medium",
+    "ready_for_modeling": true
+  },
+  "missingness": {
+    "by_column": {
+      "SK_ID_CURR": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "TARGET": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "NAME_CONTRACT_TYPE": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "CODE_GENDER": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "FLAG_OWN_CAR": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "FLAG_OWN_REALTY": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "CNT_CHILDREN": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "AMT_INCOME_TOTAL": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "AMT_CREDIT": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "AMT_ANNUITY": {
+        "count": 12,
+        "rate": 3.9022994299390916e-05
+      },
+      "AMT_GOODS_PRICE": {
+        "count": 278,
+        "rate": 0.0009040327012692228
+      },
+      "NAME_TYPE_SUITE": {
+        "count": 1292,
+        "rate": 0.004201475719567756
+      },
+      "NAME_INCOME_TYPE": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "NAME_EDUCATION_TYPE": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "NAME_FAMILY_STATUS": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "NAME_HOUSING_TYPE": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "REGION_POPULATION_RELATIVE": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "DAYS_BIRTH": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "DAYS_EMPLOYED": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "DAYS_REGISTRATION": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "DAYS_ID_PUBLISH": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "OWN_CAR_AGE": {
+        "count": 202929,
+        "rate": 0.6599081008484249
+      },
+      "FLAG_MOBIL": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "FLAG_EMP_PHONE": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "FLAG_WORK_PHONE": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "FLAG_CONT_MOBILE": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "FLAG_PHONE": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "FLAG_EMAIL": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "OCCUPATION_TYPE": {
+        "count": 96391,
+        "rate": 0.31345545362604915
+      },
+      "CNT_FAM_MEMBERS": {
+        "count": 2,
+        "rate": 6.503832383231819e-06
+      },
+      "REGION_RATING_CLIENT": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "REGION_RATING_CLIENT_W_CITY": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "WEEKDAY_APPR_PROCESS_START": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "HOUR_APPR_PROCESS_START": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "REG_REGION_NOT_LIVE_REGION": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "REG_REGION_NOT_WORK_REGION": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "LIVE_REGION_NOT_WORK_REGION": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "REG_CITY_NOT_LIVE_CITY": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "REG_CITY_NOT_WORK_CITY": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "LIVE_CITY_NOT_WORK_CITY": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "ORGANIZATION_TYPE": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "EXT_SOURCE_1": {
+        "count": 173378,
+        "rate": 0.5638107254699832
+      },
+      "EXT_SOURCE_2": {
+        "count": 660,
+        "rate": 0.0021462646864665006
+      },
+      "EXT_SOURCE_3": {
+        "count": 60965,
+        "rate": 0.19825307062186392
+      },
+      "APARTMENTS_AVG": {
+        "count": 156061,
+        "rate": 0.5074972927797705
+      },
+      "BASEMENTAREA_AVG": {
+        "count": 179943,
+        "rate": 0.5851595552679416
+      },
+      "YEARS_BEGINEXPLUATATION_AVG": {
+        "count": 150007,
+        "rate": 0.48781019215572774
+      },
+      "YEARS_BUILD_AVG": {
+        "count": 204488,
+        "rate": 0.6649778381911542
+      },
+      "COMMONAREA_AVG": {
+        "count": 214865,
+        "rate": 0.6987229725115525
+      },
+      "ELEVATORS_AVG": {
+        "count": 163891,
+        "rate": 0.532959796560123
+      },
+      "ENTRANCES_AVG": {
+        "count": 154828,
+        "rate": 0.503487680115508
+      },
+      "FLOORSMAX_AVG": {
+        "count": 153020,
+        "rate": 0.4976082156410665
+      },
+      "FLOORSMIN_AVG": {
+        "count": 208642,
+        "rate": 0.6784862980511266
+      },
+      "LANDAREA_AVG": {
+        "count": 182590,
+        "rate": 0.5937673774271489
+      },
+      "LIVINGAPARTMENTS_AVG": {
+        "count": 210199,
+        "rate": 0.6835495315614726
+      },
+      "LIVINGAREA_AVG": {
+        "count": 154350,
+        "rate": 0.5019332641759157
+      },
+      "NONLIVINGAPARTMENTS_AVG": {
+        "count": 213514,
+        "rate": 0.6943296337366793
+      },
+      "NONLIVINGAREA_AVG": {
+        "count": 169682,
+        "rate": 0.5517916432257708
+      },
+      "APARTMENTS_MODE": {
+        "count": 156061,
+        "rate": 0.5074972927797705
+      },
+      "BASEMENTAREA_MODE": {
+        "count": 179943,
+        "rate": 0.5851595552679416
+      },
+      "YEARS_BEGINEXPLUATATION_MODE": {
+        "count": 150007,
+        "rate": 0.48781019215572774
+      },
+      "YEARS_BUILD_MODE": {
+        "count": 204488,
+        "rate": 0.6649778381911542
+      },
+      "COMMONAREA_MODE": {
+        "count": 214865,
+        "rate": 0.6987229725115525
+      },
+      "ELEVATORS_MODE": {
+        "count": 163891,
+        "rate": 0.532959796560123
+      },
+      "ENTRANCES_MODE": {
+        "count": 154828,
+        "rate": 0.503487680115508
+      },
+      "FLOORSMAX_MODE": {
+        "count": 153020,
+        "rate": 0.4976082156410665
+      },
+      "FLOORSMIN_MODE": {
+        "count": 208642,
+        "rate": 0.6784862980511266
+      },
+      "LANDAREA_MODE": {
+        "count": 182590,
+        "rate": 0.5937673774271489
+      },
+      "LIVINGAPARTMENTS_MODE": {
+        "count": 210199,
+        "rate": 0.6835495315614726
+      },
+      "LIVINGAREA_MODE": {
+        "count": 154350,
+        "rate": 0.5019332641759157
+      },
+      "NONLIVINGAPARTMENTS_MODE": {
+        "count": 213514,
+        "rate": 0.6943296337366793
+      },
+      "NONLIVINGAREA_MODE": {
+        "count": 169682,
+        "rate": 0.5517916432257708
+      },
+      "APARTMENTS_MEDI": {
+        "count": 156061,
+        "rate": 0.5074972927797705
+      },
+      "BASEMENTAREA_MEDI": {
+        "count": 179943,
+        "rate": 0.5851595552679416
+      },
+      "YEARS_BEGINEXPLUATATION_MEDI": {
+        "count": 150007,
+        "rate": 0.48781019215572774
+      },
+      "YEARS_BUILD_MEDI": {
+        "count": 204488,
+        "rate": 0.6649778381911542
+      },
+      "COMMONAREA_MEDI": {
+        "count": 214865,
+        "rate": 0.6987229725115525
+      },
+      "ELEVATORS_MEDI": {
+        "count": 163891,
+        "rate": 0.532959796560123
+      },
+      "ENTRANCES_MEDI": {
+        "count": 154828,
+        "rate": 0.503487680115508
+      },
+      "FLOORSMAX_MEDI": {
+        "count": 153020,
+        "rate": 0.4976082156410665
+      },
+      "FLOORSMIN_MEDI": {
+        "count": 208642,
+        "rate": 0.6784862980511266
+      },
+      "LANDAREA_MEDI": {
+        "count": 182590,
+        "rate": 0.5937673774271489
+      },
+      "LIVINGAPARTMENTS_MEDI": {
+        "count": 210199,
+        "rate": 0.6835495315614726
+      },
+      "LIVINGAREA_MEDI": {
+        "count": 154350,
+        "rate": 0.5019332641759157
+      },
+      "NONLIVINGAPARTMENTS_MEDI": {
+        "count": 213514,
+        "rate": 0.6943296337366793
+      },
+      "NONLIVINGAREA_MEDI": {
+        "count": 169682,
+        "rate": 0.5517916432257708
+      },
+      "FONDKAPREMONT_MODE": {
+        "count": 210295,
+        "rate": 0.6838617155158677
+      },
+      "HOUSETYPE_MODE": {
+        "count": 154297,
+        "rate": 0.50176091261776
+      },
+      "TOTALAREA_MODE": {
+        "count": 148431,
+        "rate": 0.4826851722377411
+      },
+      "WALLSMATERIAL_MODE": {
+        "count": 156341,
+        "rate": 0.508407829313423
+      },
+      "EMERGENCYSTATE_MODE": {
+        "count": 145755,
+        "rate": 0.47398304450897694
+      },
+      "OBS_30_CNT_SOCIAL_CIRCLE": {
+        "count": 1021,
+        "rate": 0.0033202064316398437
+      },
+      "DEF_30_CNT_SOCIAL_CIRCLE": {
+        "count": 1021,
+        "rate": 0.0033202064316398437
+      },
+      "OBS_60_CNT_SOCIAL_CIRCLE": {
+        "count": 1021,
+        "rate": 0.0033202064316398437
+      },
+      "DEF_60_CNT_SOCIAL_CIRCLE": {
+        "count": 1021,
+        "rate": 0.0033202064316398437
+      },
+      "DAYS_LAST_PHONE_CHANGE": {
+        "count": 1,
+        "rate": 3.2519161916159095e-06
+      },
+      "FLAG_DOCUMENT_2": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "FLAG_DOCUMENT_3": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "FLAG_DOCUMENT_4": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "FLAG_DOCUMENT_5": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "FLAG_DOCUMENT_6": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "FLAG_DOCUMENT_7": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "FLAG_DOCUMENT_8": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "FLAG_DOCUMENT_9": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "FLAG_DOCUMENT_10": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "FLAG_DOCUMENT_11": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "FLAG_DOCUMENT_12": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "FLAG_DOCUMENT_13": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "FLAG_DOCUMENT_14": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "FLAG_DOCUMENT_15": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "FLAG_DOCUMENT_16": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "FLAG_DOCUMENT_17": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "FLAG_DOCUMENT_18": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "FLAG_DOCUMENT_19": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "FLAG_DOCUMENT_20": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "FLAG_DOCUMENT_21": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "AMT_REQ_CREDIT_BUREAU_HOUR": {
+        "count": 41519,
+        "rate": 0.13501630835970097
+      },
+      "AMT_REQ_CREDIT_BUREAU_DAY": {
+        "count": 41519,
+        "rate": 0.13501630835970097
+      },
+      "AMT_REQ_CREDIT_BUREAU_WEEK": {
+        "count": 41519,
+        "rate": 0.13501630835970097
+      },
+      "AMT_REQ_CREDIT_BUREAU_MON": {
+        "count": 41519,
+        "rate": 0.13501630835970097
+      },
+      "AMT_REQ_CREDIT_BUREAU_QRT": {
+        "count": 41519,
+        "rate": 0.13501630835970097
+      },
+      "AMT_REQ_CREDIT_BUREAU_YEAR": {
+        "count": 41519,
+        "rate": 0.13501630835970097
+      }
+    },
+    "columns_at_or_above_50_percent": [
+      {
+        "column": "COMMONAREA_AVG",
+        "missing_count": 214865,
+        "missing_rate": 0.6987229725115525
+      },
+      {
+        "column": "COMMONAREA_MODE",
+        "missing_count": 214865,
+        "missing_rate": 0.6987229725115525
+      },
+      {
+        "column": "COMMONAREA_MEDI",
+        "missing_count": 214865,
+        "missing_rate": 0.6987229725115525
+      },
+      {
+        "column": "NONLIVINGAPARTMENTS_AVG",
+        "missing_count": 213514,
+        "missing_rate": 0.6943296337366793
+      },
+      {
+        "column": "NONLIVINGAPARTMENTS_MODE",
+        "missing_count": 213514,
+        "missing_rate": 0.6943296337366793
+      },
+      {
+        "column": "NONLIVINGAPARTMENTS_MEDI",
+        "missing_count": 213514,
+        "missing_rate": 0.6943296337366793
+      },
+      {
+        "column": "FONDKAPREMONT_MODE",
+        "missing_count": 210295,
+        "missing_rate": 0.6838617155158677
+      },
+      {
+        "column": "LIVINGAPARTMENTS_AVG",
+        "missing_count": 210199,
+        "missing_rate": 0.6835495315614726
+      },
+      {
+        "column": "LIVINGAPARTMENTS_MODE",
+        "missing_count": 210199,
+        "missing_rate": 0.6835495315614726
+      },
+      {
+        "column": "LIVINGAPARTMENTS_MEDI",
+        "missing_count": 210199,
+        "missing_rate": 0.6835495315614726
+      },
+      {
+        "column": "FLOORSMIN_AVG",
+        "missing_count": 208642,
+        "missing_rate": 0.6784862980511266
+      },
+      {
+        "column": "FLOORSMIN_MODE",
+        "missing_count": 208642,
+        "missing_rate": 0.6784862980511266
+      },
+      {
+        "column": "FLOORSMIN_MEDI",
+        "missing_count": 208642,
+        "missing_rate": 0.6784862980511266
+      },
+      {
+        "column": "YEARS_BUILD_AVG",
+        "missing_count": 204488,
+        "missing_rate": 0.6649778381911542
+      },
+      {
+        "column": "YEARS_BUILD_MODE",
+        "missing_count": 204488,
+        "missing_rate": 0.6649778381911542
+      },
+      {
+        "column": "YEARS_BUILD_MEDI",
+        "missing_count": 204488,
+        "missing_rate": 0.6649778381911542
+      },
+      {
+        "column": "OWN_CAR_AGE",
+        "missing_count": 202929,
+        "missing_rate": 0.6599081008484249
+      },
+      {
+        "column": "LANDAREA_AVG",
+        "missing_count": 182590,
+        "missing_rate": 0.5937673774271489
+      },
+      {
+        "column": "LANDAREA_MODE",
+        "missing_count": 182590,
+        "missing_rate": 0.5937673774271489
+      },
+      {
+        "column": "LANDAREA_MEDI",
+        "missing_count": 182590,
+        "missing_rate": 0.5937673774271489
+      },
+      {
+        "column": "BASEMENTAREA_AVG",
+        "missing_count": 179943,
+        "missing_rate": 0.5851595552679416
+      },
+      {
+        "column": "BASEMENTAREA_MODE",
+        "missing_count": 179943,
+        "missing_rate": 0.5851595552679416
+      },
+      {
+        "column": "BASEMENTAREA_MEDI",
+        "missing_count": 179943,
+        "missing_rate": 0.5851595552679416
+      },
+      {
+        "column": "EXT_SOURCE_1",
+        "missing_count": 173378,
+        "missing_rate": 0.5638107254699832
+      },
+      {
+        "column": "NONLIVINGAREA_AVG",
+        "missing_count": 169682,
+        "missing_rate": 0.5517916432257708
+      },
+      {
+        "column": "NONLIVINGAREA_MODE",
+        "missing_count": 169682,
+        "missing_rate": 0.5517916432257708
+      },
+      {
+        "column": "NONLIVINGAREA_MEDI",
+        "missing_count": 169682,
+        "missing_rate": 0.5517916432257708
+      },
+      {
+        "column": "ELEVATORS_AVG",
+        "missing_count": 163891,
+        "missing_rate": 0.532959796560123
+      },
+      {
+        "column": "ELEVATORS_MODE",
+        "missing_count": 163891,
+        "missing_rate": 0.532959796560123
+      },
+      {
+        "column": "ELEVATORS_MEDI",
+        "missing_count": 163891,
+        "missing_rate": 0.532959796560123
+      },
+      {
+        "column": "WALLSMATERIAL_MODE",
+        "missing_count": 156341,
+        "missing_rate": 0.508407829313423
+      },
+      {
+        "column": "APARTMENTS_AVG",
+        "missing_count": 156061,
+        "missing_rate": 0.5074972927797705
+      },
+      {
+        "column": "APARTMENTS_MODE",
+        "missing_count": 156061,
+        "missing_rate": 0.5074972927797705
+      },
+      {
+        "column": "APARTMENTS_MEDI",
+        "missing_count": 156061,
+        "missing_rate": 0.5074972927797705
+      },
+      {
+        "column": "ENTRANCES_AVG",
+        "missing_count": 154828,
+        "missing_rate": 0.503487680115508
+      },
+      {
+        "column": "ENTRANCES_MODE",
+        "missing_count": 154828,
+        "missing_rate": 0.503487680115508
+      },
+      {
+        "column": "ENTRANCES_MEDI",
+        "missing_count": 154828,
+        "missing_rate": 0.503487680115508
+      },
+      {
+        "column": "LIVINGAREA_AVG",
+        "missing_count": 154350,
+        "missing_rate": 0.5019332641759157
+      },
+      {
+        "column": "LIVINGAREA_MODE",
+        "missing_count": 154350,
+        "missing_rate": 0.5019332641759157
+      },
+      {
+        "column": "LIVINGAREA_MEDI",
+        "missing_count": 154350,
+        "missing_rate": 0.5019332641759157
+      },
+      {
+        "column": "HOUSETYPE_MODE",
+        "missing_count": 154297,
+        "missing_rate": 0.50176091261776
+      }
+    ]
+  },
+  "numeric_profile": {
+    "AMT_INCOME_TOTAL": {
+      "count": 307511,
+      "invalid_count": 0,
+      "minimum": 25650.0,
+      "maximum": 117000000.0,
+      "mean": 168797.91929698313,
+      "standard_deviation": 237123.1462788521
+    },
+    "AMT_CREDIT": {
+      "count": 307511,
+      "invalid_count": 0,
+      "minimum": 45000.0,
+      "maximum": 4050000.0,
+      "mean": 599025.9997057056,
+      "standard_deviation": 402490.7769958497
+    },
+    "AMT_ANNUITY": {
+      "count": 307499,
+      "invalid_count": 0,
+      "minimum": 1615.5,
+      "maximum": 258025.5,
+      "mean": 27108.57390918361,
+      "standard_deviation": 14493.737315118438
+    },
+    "AMT_GOODS_PRICE": {
+      "count": 307233,
+      "invalid_count": 0,
+      "minimum": 40500.0,
+      "maximum": 4050000.0,
+      "mean": 538396.2074288996,
+      "standard_deviation": 369446.46054005733
+    },
+    "DAYS_BIRTH": {
+      "count": 307511,
+      "invalid_count": 0,
+      "minimum": -25229.0,
+      "maximum": -7489.0,
+      "mean": -16036.995066843352,
+      "standard_deviation": 4363.988631785574
+    },
+    "DAYS_EMPLOYED": {
+      "count": 307511,
+      "invalid_count": 0,
+      "minimum": -17912.0,
+      "maximum": 365243.0,
+      "mean": 63815.04590404876,
+      "standard_deviation": 141275.7665187268
+    },
+    "CNT_FAM_MEMBERS": {
+      "count": 307509,
+      "invalid_count": 0,
+      "minimum": 1.0,
+      "maximum": 20.0,
+      "mean": 2.15266545044214,
+      "standard_deviation": 0.9106815691792911
+    },
+    "EXT_SOURCE_1": {
+      "count": 134133,
+      "invalid_count": 0,
+      "minimum": 0.014568132412445587,
+      "maximum": 0.9626927705613059,
+      "mean": 0.5021298056566605,
+      "standard_deviation": 0.2110622492739246
+    },
+    "EXT_SOURCE_2": {
+      "count": 306851,
+      "invalid_count": 0,
+      "minimum": 8.173616518884397e-08,
+      "maximum": 0.8549996664047012,
+      "mean": 0.5143926741308393,
+      "standard_deviation": 0.19106015498493545
+    },
+    "EXT_SOURCE_3": {
+      "count": 246546,
+      "invalid_count": 0,
+      "minimum": 0.0005272652387098817,
+      "maximum": 0.8960095494948396,
+      "mean": 0.5108529061799821,
+      "standard_deviation": 0.19484436446374775
+    }
+  },
+  "categorical_profile": {
+    "NAME_CONTRACT_TYPE": {
+      "Cash loans": 278232,
+      "Revolving loans": 29279
+    },
+    "CODE_GENDER": {
+      "F": 202448,
+      "M": 105059,
+      "XNA": 4
+    },
+    "NAME_INCOME_TYPE": {
+      "Working": 158774,
+      "Commercial associate": 71617,
+      "Pensioner": 55362,
+      "State servant": 21703,
+      "Unemployed": 22,
+      "Student": 18,
+      "Businessman": 10,
+      "Maternity leave": 5
+    },
+    "NAME_EDUCATION_TYPE": {
+      "Secondary / secondary special": 218391,
+      "Higher education": 74863,
+      "Incomplete higher": 10277,
+      "Lower secondary": 3816,
+      "Academic degree": 164
+    },
+    "NAME_HOUSING_TYPE": {
+      "House / apartment": 272868,
+      "With parents": 14840,
+      "Municipal apartment": 11183,
+      "Rented apartment": 4881,
+      "Office apartment": 2617,
+      "Co-op apartment": 1122
+    }
+  },
+  "findings": [
+    {
+      "code": "DQ-APP-004",
+      "severity": "medium",
+      "count": 55374,
+      "rate": 0.18007160719453938,
+      "message": "DAYS_EMPLOYED contains the known 365243 sentinel value",
+      "analytical_risk": "Treating the sentinel as a duration creates extreme and misleading features",
+      "remediation": "Replace with null and add an employment-sentinel indicator"
+    },
+    {
+      "code": "DQ-APP-005",
+      "severity": "medium",
+      "count": 4,
+      "rate": 1.3007664766463638e-05,
+      "message": "CODE_GENDER contains XNA values",
+      "analytical_risk": "Unmodelled categories can break transforms and distort audit segments",
+      "remediation": "Normalize to an explicit unknown category and keep gender audit-only"
+    }
+  ],
+  "assumptions": [
+    "SK_ID_CURR is expected to be unique in application_train",
+    "TARGET accepts only 0 and 1",
+    "Empty strings and common textual null markers are treated as missing",
+    "DAYS_EMPLOYED=365243 is treated as a sentinel rather than a real duration"
+  ]
+}

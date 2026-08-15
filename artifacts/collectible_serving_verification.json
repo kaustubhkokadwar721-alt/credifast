@@ -1,0 +1,65 @@
+{
+  "run_version": "1.0.0",
+  "tolerance": 1e-09,
+  "max_absolute_difference": 0.0,
+  "consistent": true,
+  "applicants": [
+    {
+      "application_id": 100023,
+      "training_path_probability": 0.038664335116514764,
+      "workbook_path_probability": 0.038664335116514764,
+      "absolute_difference": 0.0,
+      "features_supplied": 103
+    },
+    {
+      "application_id": 100059,
+      "training_path_probability": 0.0293803508205046,
+      "workbook_path_probability": 0.0293803508205046,
+      "absolute_difference": 0.0,
+      "features_supplied": 113
+    },
+    {
+      "application_id": 100082,
+      "training_path_probability": 0.04639587967037128,
+      "workbook_path_probability": 0.04639587967037128,
+      "absolute_difference": 0.0,
+      "features_supplied": 103
+    },
+    {
+      "application_id": 100083,
+      "training_path_probability": 0.05018940306464748,
+      "workbook_path_probability": 0.05018940306464748,
+      "absolute_difference": 0.0,
+      "features_supplied": 103
+    },
+    {
+      "application_id": 100176,
+      "training_path_probability": 0.0491423515619872,
+      "workbook_path_probability": 0.0491423515619872,
+      "absolute_difference": 0.0,
+      "features_supplied": 113
+    },
+    {
+      "application_id": 100181,
+      "training_path_probability": 0.05498623719353825,
+      "workbook_path_probability": 0.05498623719353825,
+      "absolute_difference": 0.0,
+      "features_supplied": 113
+    },
+    {
+      "application_id": 100190,
+      "training_path_probability": 0.020004655433282354,
+      "workbook_path_probability": 0.020004655433282354,
+      "absolute_difference": 0.0,
+      "features_supplied": 103
+    },
+    {
+      "application_id": 100198,
+      "training_path_probability": 0.03497380356013445,
+      "workbook_path_probability": 0.03497380356013445,
+      "absolute_difference": 0.0,
+      "features_supplied": 103
+    }
+  ],
+  "note": "Compares the same applicant scored from the engineered training frame against the workbook export/parse/score path. A non-zero difference is train/serve skew."
+}

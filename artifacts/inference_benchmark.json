@@ -1,0 +1,81 @@
+{
+  "run_version": "1.0.0",
+  "scope": "warm in-process scorer; excludes file reads and joblib deserialization",
+  "application_source": "application_test.csv",
+  "benchmark_rows_available": 1000,
+  "results": {
+    "probability_only": {
+      "1": {
+        "repetitions": 30,
+        "rows_per_run": 1,
+        "total_milliseconds_p50": 55.400950001057936,
+        "total_milliseconds_p95": 57.723250000708504,
+        "milliseconds_per_row_p50": 55.400950001057936,
+        "milliseconds_per_row_p95": 57.723250000708504,
+        "rows_per_second_at_p50": 18.050231990261974
+      },
+      "100": {
+        "repetitions": 5,
+        "rows_per_run": 100,
+        "total_milliseconds_p50": 74.8133000015514,
+        "total_milliseconds_p95": 76.83378000219818,
+        "milliseconds_per_row_p50": 0.748133000015514,
+        "milliseconds_per_row_p95": 0.7683378000219818,
+        "rows_per_second_at_p50": 1336.6607274097828
+      },
+      "1000": {
+        "repetitions": 3,
+        "rows_per_run": 1000,
+        "total_milliseconds_p50": 158.9254999998957,
+        "total_milliseconds_p95": 219.4567999955325,
+        "milliseconds_per_row_p50": 0.1589254999998957,
+        "milliseconds_per_row_p95": 0.2194567999955325,
+        "rows_per_second_at_p50": 6292.256434622866
+      }
+    },
+    "with_reasons": {
+      "1": {
+        "repetitions": 15,
+        "rows_per_run": 1,
+        "total_milliseconds_p50": 76.13679999485612,
+        "total_milliseconds_p95": 78.246560000116,
+        "milliseconds_per_row_p50": 76.13679999485612,
+        "milliseconds_per_row_p95": 78.246560000116,
+        "rows_per_second_at_p50": 13.134253082183136
+      },
+      "100": {
+        "repetitions": 4,
+        "rows_per_run": 100,
+        "total_milliseconds_p50": 367.138249999698,
+        "total_milliseconds_p95": 381.7735199980234,
+        "milliseconds_per_row_p50": 3.67138249999698,
+        "milliseconds_per_row_p95": 3.817735199980234,
+        "rows_per_second_at_p50": 272.3769588161469
+      },
+      "1000": {
+        "repetitions": 2,
+        "rows_per_run": 1000,
+        "total_milliseconds_p50": 3301.683800000319,
+        "total_milliseconds_p95": 3645.987529999911,
+        "milliseconds_per_row_p50": 3.301683800000319,
+        "milliseconds_per_row_p95": 3.6459875299999114,
+        "rows_per_second_at_p50": 302.8757629667333
+      }
+    }
+  },
+  "gates": {
+    "single_row_probability_p95_below_300_ms": true,
+    "single_row_explained_p95_below_1000_ms": true,
+    "observed_probability_p95_ms": 57.723250000708504,
+    "observed_explained_p95_ms": 78.246560000116
+  },
+  "environment": {
+    "python": "3.13.3",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 154 Stepping 4, GenuineIntel"
+  },
+  "limitations": [
+    "This is a local warm-process benchmark, not an HTTP or concurrent load test.",
+    "Production p95 must include request validation, feature retrieval, serialization, and contention."
+  ]
+}

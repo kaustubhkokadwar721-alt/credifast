@@ -1,0 +1,190 @@
+{
+  "run_version": "1.0.0",
+  "status": "diagnostic_only_frozen_holdout_not_retuned",
+  "population": {
+    "rows": 46127,
+    "events": 3724,
+    "prevalence": 0.08073362672621241
+  },
+  "model_comparison": {
+    "application_probability": {
+      "average_precision": 0.24974462710732975,
+      "lift_over_prevalence": 3.093439960950537
+    },
+    "history_probability": {
+      "average_precision": 0.2792067748383414,
+      "lift_over_prevalence": 3.4583702746960725
+    },
+    "operational_probability": {
+      "average_precision": 0.27987515315745504,
+      "lift_over_prevalence": 3.466649084235749
+    }
+  },
+  "operational_candidate": {
+    "absolute_ap_gain_over_random": 0.1991415264312426,
+    "ap_gain_over_application_model": 0.030130526050125284,
+    "ap_gain_over_history_model": 0.0006683783191136494,
+    "top_fraction_operating_points": [
+      {
+        "population_fraction": 0.01,
+        "selected_rows": 462,
+        "probability_threshold": 0.44924668133911627,
+        "true_positives": 242,
+        "false_positives": 220,
+        "precision": 0.5238095238095238,
+        "recall": 0.06498388829215897,
+        "lift_over_prevalence": 6.488120812234668
+      },
+      {
+        "population_fraction": 0.02,
+        "selected_rows": 923,
+        "probability_threshold": 0.3756439836797864,
+        "true_positives": 423,
+        "false_positives": 500,
+        "precision": 0.4582881906825569,
+        "recall": 0.11358754027926961,
+        "lift_over_prevalence": 5.676546555213292
+      },
+      {
+        "population_fraction": 0.05,
+        "selected_rows": 2307,
+        "probability_threshold": 0.266573257151837,
+        "true_positives": 839,
+        "false_positives": 1468,
+        "precision": 0.3636757693974859,
+        "recall": 0.2252953813104189,
+        "lift_over_prevalence": 4.5046380813635425
+      },
+      {
+        "population_fraction": 0.1,
+        "selected_rows": 4613,
+        "probability_threshold": 0.1889771190368437,
+        "true_positives": 1371,
+        "false_positives": 3242,
+        "precision": 0.2972035551701713,
+        "recall": 0.3681525241675618,
+        "lift_over_prevalence": 3.681285818833107
+      },
+      {
+        "population_fraction": 0.2,
+        "selected_rows": 9226,
+        "probability_threshold": 0.11761061278803675,
+        "true_positives": 2104,
+        "false_positives": 7122,
+        "precision": 0.22805115976587903,
+        "recall": 0.564983888292159,
+        "lift_over_prevalence": 2.824735726777847
+      },
+      {
+        "population_fraction": 0.3,
+        "selected_rows": 13839,
+        "probability_threshold": 0.08346494226231926,
+        "true_positives": 2585,
+        "false_positives": 11254,
+        "precision": 0.18679095310354796,
+        "recall": 0.6941460794844253,
+        "lift_over_prevalence": 2.313669788884897
+      },
+      {
+        "population_fraction": 0.5,
+        "selected_rows": 23064,
+        "probability_threshold": 0.04752996545574893,
+        "true_positives": 3174,
+        "false_positives": 19890,
+        "precision": 0.13761706555671177,
+        "recall": 0.8523093447905478,
+        "lift_over_prevalence": 1.7045817354818593
+      }
+    ],
+    "precision_targets": [
+      {
+        "minimum_precision": 0.2,
+        "achieved_precision": 0.2,
+        "recall": 0.6557465091299678,
+        "threshold": 0.0931627212955587
+      },
+      {
+        "minimum_precision": 0.3,
+        "achieved_precision": 0.3,
+        "recall": 0.3592910848549946,
+        "threshold": 0.19272652338017537
+      },
+      {
+        "minimum_precision": 0.4,
+        "achieved_precision": 0.4,
+        "recall": 0.17508055853920515,
+        "threshold": 0.30636064122497453
+      },
+      {
+        "minimum_precision": 0.5,
+        "achieved_precision": 0.5,
+        "recall": 0.07062298603651987,
+        "threshold": 0.4358679072598057
+      }
+    ],
+    "recall_targets": [
+      {
+        "minimum_recall": 0.2,
+        "achieved_recall": 0.20139634801288936,
+        "precision": 0.3830439223697651,
+        "threshold": 0.28569065494957857
+      },
+      {
+        "minimum_recall": 0.4,
+        "achieved_recall": 0.40037593984962405,
+        "precision": 0.28706199460916443,
+        "threshold": 0.1755819621004155
+      },
+      {
+        "minimum_recall": 0.6,
+        "achieved_recall": 0.602577873254565,
+        "precision": 0.21595611586950245,
+        "threshold": 0.10672872870294017
+      },
+      {
+        "minimum_recall": 0.8,
+        "achieved_recall": 0.8002148227712137,
+        "precision": 0.15218834584546242,
+        "threshold": 0.057880941580739254
+      }
+    ],
+    "maximum_f1": {
+      "f1": 0.33939653327626795,
+      "precision": 0.28210601209533975,
+      "recall": 0.42588614393125673,
+      "threshold": 0.16706069862035383
+    }
+  },
+  "history_segments": [
+    {
+      "segment": "full_4_to_5_sources",
+      "rows": 38941,
+      "events": 3114,
+      "prevalence": 0.07996712976040676,
+      "average_precision": 0.27872278183519894,
+      "lift_over_prevalence": 3.4854668745807587
+    },
+    {
+      "segment": "partial_2_to_3_sources",
+      "rows": 4915,
+      "events": 486,
+      "prevalence": 0.09888097660223805,
+      "average_precision": 0.2848484203822942,
+      "lift_over_prevalence": 2.880720136170732
+    },
+    {
+      "segment": "thin_0_to_1_sources",
+      "rows": 2271,
+      "events": 124,
+      "prevalence": 0.054601497137824744,
+      "average_precision": 0.2932044304363923,
+      "lift_over_prevalence": 5.369897270331024
+    }
+  ],
+  "interpretation": [
+    "Average precision must be read against the 8.07% event prevalence; random ranking has AP equal to prevalence.",
+    "The metric remains modest in absolute terms and does not establish production-grade credit selection.",
+    "The frozen gap-aware candidate preserves, rather than materially improves, the history model's aggregate average precision.",
+    "Thresholds are diagnostic operating points, not approval, decline, pricing, or adverse-action policy."
+  ]
+}

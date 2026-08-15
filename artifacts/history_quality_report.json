@@ -1,0 +1,286 @@
+{
+  "run_version": "1.0.0",
+  "dataset": "history_features.parquet",
+  "intended_use": "history-enriched credit-risk model development",
+  "grain": "one row per train or test SK_ID_CURR",
+  "summary": {
+    "row_count": 356255,
+    "column_count": 151,
+    "feature_count_excluding_key": 150,
+    "unique_keys": 356255,
+    "null_keys": 0,
+    "expected_application_rows": 356255,
+    "maximum_finding_severity": "none",
+    "ready_for_modeling": true
+  },
+  "checks": {
+    "target_column_absent": true,
+    "rate_bounds": {
+      "BUREAU_ACTIVE_RATE": {
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "invalid_rows": 0
+      },
+      "BUREAU_OVERDUE_RATE": {
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "invalid_rows": 0
+      },
+      "BB_DELINQUENT_MONTH_RATE": {
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "invalid_rows": 0
+      },
+      "BB_SEVERE_DELINQUENT_MONTH_RATE": {
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "invalid_rows": 0
+      },
+      "PREV_APPROVAL_RATE": {
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "invalid_rows": 0
+      },
+      "PREV_REFUSAL_RATE": {
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "invalid_rows": 0
+      },
+      "POS_DPD_MONTH_RATE": {
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "invalid_rows": 0
+      },
+      "POS_DPD_DEF_MONTH_RATE": {
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "invalid_rows": 0
+      },
+      "CC_DPD_MONTH_RATE": {
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "invalid_rows": 0
+      },
+      "CC_DPD_DEF_MONTH_RATE": {
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "invalid_rows": 0
+      },
+      "INST_LATE_PAYMENT_RATE": {
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "invalid_rows": 0
+      },
+      "INST_SHORT_PAYMENT_RATE": {
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "invalid_rows": 0
+      }
+    },
+    "negative_count_features": {},
+    "non_finite_features": {},
+    "source_coverage": {
+      "HAS_BUREAU_HISTORY": {
+        "rows": 305811,
+        "rate": 0.8584047943186762
+      },
+      "HAS_PREVIOUS_APPLICATION": {
+        "rows": 338857,
+        "rate": 0.9511641941867482
+      },
+      "HAS_POS_HISTORY": {
+        "rows": 337252,
+        "rate": 0.9466589942597297
+      },
+      "HAS_CREDIT_CARD_HISTORY": {
+        "rows": 103558,
+        "rate": 0.2906850430169401
+      },
+      "HAS_INSTALLMENT_HISTORY": {
+        "rows": 339587,
+        "rate": 0.9532132882345511
+      }
+    },
+    "target_rate_by_source_availability": {
+      "HAS_BUREAU_HISTORY": [
+        {
+          "available": 0,
+          "rows": 44020,
+          "target_rate": 0.10124943207632894
+        },
+        {
+          "available": 1,
+          "rows": 263491,
+          "target_rate": 0.07730055296006315
+        }
+      ],
+      "HAS_PREVIOUS_APPLICATION": [
+        {
+          "available": 0,
+          "rows": 16454,
+          "target_rate": 0.05955998541388112
+        },
+        {
+          "available": 1,
+          "rows": 291057,
+          "target_rate": 0.08192553348656792
+        }
+      ],
+      "HAS_POS_HISTORY": [
+        {
+          "available": 0,
+          "rows": 18067,
+          "target_rate": 0.06664083688492832
+        },
+        {
+          "available": 1,
+          "rows": 289444,
+          "target_rate": 0.08160818673042108
+        }
+      ],
+      "HAS_CREDIT_CARD_HISTORY": [
+        {
+          "available": 0,
+          "rows": 220606,
+          "target_rate": 0.07837955449987762
+        },
+        {
+          "available": 1,
+          "rows": 86905,
+          "target_rate": 0.08669236522639664
+        }
+      ],
+      "HAS_INSTALLMENT_HISTORY": [
+        {
+          "available": 0,
+          "rows": 15868,
+          "target_rate": 0.05980589866397782
+        },
+        {
+          "available": 1,
+          "rows": 291643,
+          "target_rate": 0.08186721436825159
+        }
+      ]
+    },
+    "top_missing_features": [
+      {
+        "feature": "CC_PAYMENT_TO_MINIMUM_MEAN",
+        "null_count": 286359,
+        "null_rate": 0.8038034553900998
+      },
+      {
+        "feature": "CC_PAYMENT_CURRENT_SUM",
+        "null_count": 284135,
+        "null_rate": 0.7975607359896704
+      },
+      {
+        "feature": "CC_ATM_DRAWINGS_SUM",
+        "null_count": 284061,
+        "null_rate": 0.7973530196067423
+      },
+      {
+        "feature": "CC_POS_DRAWINGS_SUM",
+        "null_count": 284061,
+        "null_rate": 0.7973530196067423
+      },
+      {
+        "feature": "CC_ATM_DRAWING_COUNT_SUM",
+        "null_count": 284061,
+        "null_rate": 0.7973530196067423
+      },
+      {
+        "feature": "CC_POS_DRAWING_COUNT_SUM",
+        "null_count": 284061,
+        "null_rate": 0.7973530196067423
+      },
+      {
+        "feature": "CC_UTILIZATION_MEAN",
+        "null_count": 253810,
+        "null_rate": 0.7124391236614223
+      },
+      {
+        "feature": "CC_UTILIZATION_MAX",
+        "null_count": 253810,
+        "null_rate": 0.7124391236614223
+      },
+      {
+        "feature": "CC_MONTH_COUNT",
+        "null_count": 252697,
+        "null_rate": 0.7093149569830599
+      },
+      {
+        "feature": "CC_CONTRACT_COUNT",
+        "null_count": 252697,
+        "null_rate": 0.7093149569830599
+      },
+      {
+        "feature": "CC_OLDEST_MONTH",
+        "null_count": 252697,
+        "null_rate": 0.7093149569830599
+      },
+      {
+        "feature": "CC_LATEST_MONTH",
+        "null_count": 252697,
+        "null_rate": 0.7093149569830599
+      },
+      {
+        "feature": "CC_BALANCE_MEAN",
+        "null_count": 252697,
+        "null_rate": 0.7093149569830599
+      },
+      {
+        "feature": "CC_BALANCE_MAX",
+        "null_count": 252697,
+        "null_rate": 0.7093149569830599
+      },
+      {
+        "feature": "CC_BALANCE_SUM",
+        "null_count": 252697,
+        "null_rate": 0.7093149569830599
+      },
+      {
+        "feature": "CC_LIMIT_MEAN",
+        "null_count": 252697,
+        "null_rate": 0.7093149569830599
+      },
+      {
+        "feature": "CC_LIMIT_MAX",
+        "null_count": 252697,
+        "null_rate": 0.7093149569830599
+      },
+      {
+        "feature": "CC_DRAWINGS_MEAN",
+        "null_count": 252697,
+        "null_rate": 0.7093149569830599
+      },
+      {
+        "feature": "CC_DRAWINGS_SUM",
+        "null_count": 252697,
+        "null_rate": 0.7093149569830599
+      },
+      {
+        "feature": "CC_PAYMENT_TOTAL_SUM",
+        "null_count": 252697,
+        "null_rate": 0.7093149569830599
+      }
+    ]
+  },
+  "findings": [],
+  "interpretation": [
+    "Nulls in a source-specific feature block are expected when the corresponding HAS_* flag is zero.",
+    "Credit-card history has structurally lower coverage than other histories and should not be imputed as evidence of zero debt.",
+    "Source-availability flags are retained because absence of history is operationally distinct from a measured zero."
+  ],
+  "automated_gate": {
+    "required": [
+      "row count equals application_train plus application_test",
+      "SK_ID_CURR is non-null and unique",
+      "TARGET is absent",
+      "all count features are nonnegative",
+      "all rate features are within zero and one",
+      "all populated numeric values are finite"
+    ],
+    "passed": true
+  }
+}
