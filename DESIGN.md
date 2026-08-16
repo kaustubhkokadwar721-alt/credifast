@@ -15,6 +15,12 @@ colors:
   alert-red-bg: "#fff0ef"
   ready-green: "#16614a"
   ready-green-bg: "#eaf7f0"
+  exception-amber-border: "#e7c98a"
+  exception-amber-ink: "#6b430e"
+  alert-red-border: "#e0afaa"
+  alert-red-ink: "#722323"
+  ready-green-border: "#a9d2bf"
+  ready-green-ink: "#174e3d"
 typography:
   display:
     fontFamily: '"CrediFast Docket", "Source Serif 4", Georgia, serif'
@@ -42,6 +48,24 @@ typography:
     fontSize: "0.72rem"
     fontWeight: 800
     letterSpacing: "0.12em"
+  label-lead:
+    fontFamily: "sans-serif"
+    fontSize: "0.82rem"
+    fontWeight: 800
+    letterSpacing: "0.16em"
+  label-meta:
+    fontFamily: "sans-serif"
+    fontSize: "0.76rem"
+    fontWeight: 700
+  metric:
+    fontFamily: "sans-serif"
+    fontSize: "1.25rem"
+    fontWeight: 760
+  notice:
+    fontFamily: "sans-serif"
+    fontSize: "0.86rem"
+    fontWeight: 400
+    lineHeight: 1.45
 rounded:
   square: "0"
   control: "2px"
