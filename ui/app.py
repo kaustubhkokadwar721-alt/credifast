@@ -83,6 +83,7 @@ p, label, li { color: var(--ink-soft); }
 .section-rule strong { color: var(--ink); font-size: 1rem; }
 .section-rule span { color: var(--ink-soft); font-size: .74rem; }
 .evidence-row { display: grid; grid-template-columns: 4rem 1fr auto; gap: .8rem; align-items: start; border-bottom: 1px solid var(--line); padding: .78rem .1rem; }
+.evidence-row.provenance { grid-template-columns: 1fr auto; }
 .evidence-code { color: var(--cobalt-dark); font-weight: 800; font-size: .76rem; }
 .evidence-copy { color: var(--ink); font-size: .9rem; line-height: 1.4; }
 .evidence-weight { color: var(--ink-soft); font-size: .76rem; font-variant-numeric: tabular-nums; }
@@ -139,22 +140,42 @@ def money(value: float | None) -> str:
     return "Not available" if value is None else f"{value:,.0f}"
 
 
-def render_source_badges(field: str) -> None:
-    metadata = EDITABLE_FIELDS[field]
-    chips = []
-    for badge in metadata["source_badges"]:
-        css_class = "source-chip"
-        if "BANK" in badge or "AA" in badge:
-            css_class += " bank"
-        elif "CIBIL" in badge:
-            css_class += " cibil"
-        elif "LENDER" in badge:
-            css_class += " lender"
-        chips.append(f'<span class="{css_class}">{badge}</span>')
-    st.markdown(
-        '<div class="source-badges">' + "".join(chips) + "</div>",
-        unsafe_allow_html=True,
-    )
+FIELD_PLAIN_NAMES = {
+    "annual_income": "Yearly income",
+    "requested_credit": "Amount being borrowed",
+    "annual_annuity": "Yearly repayment on this loan",
+    "goods_price": "Price of the item being bought",
+}
+
+
+def render_field_provenance() -> None:
+    """Where each editable number comes from.
+
+    This used to sit as a stack of uppercase chips above every input, where it was louder
+    than the field labels and unreadable to anyone who does not already know what an
+    Account Aggregator is. It belongs with the rest of the provenance, not on the form.
+    """
+
+    for field, plain_name in FIELD_PLAIN_NAMES.items():
+        metadata = EDITABLE_FIELDS[field]
+        chips = []
+        for badge in metadata["source_badges"]:
+            css_class = "source-chip"
+            if "BANK" in badge or "AA" in badge:
+                css_class += " bank"
+            elif "CIBIL" in badge:
+                css_class += " cibil"
+            elif "LENDER" in badge:
+                css_class += " lender"
+            chips.append(f'<span class="{css_class}">{badge}</span>')
+        st.markdown(
+            f"""<div class="evidence-row provenance">
+              <div class="evidence-copy"><strong>{plain_name}</strong><br>
+                <span class="smallprint">{metadata['note']}</span></div>
+              <div class="source-badges">{''.join(chips)}</div>
+            </div>""",
+            unsafe_allow_html=True,
+        )
 
 
 def intake_fingerprint(payload: dict[str, int | float]) -> str:
@@ -305,19 +326,21 @@ with review_tab:
     input_schema = runtime.input_schema()
     st.title("Review the evidence, not just the score.")
     st.write(
-        "Select a curated case, enter a known applicant ID, or upload a compact JSON intake. "
-        "Only current declared terms are editable; historical evidence is assembled automatically."
+        "Pick an example applicant, or look one up by their application number. You can change "
+        "the loan being asked for and see how the assessment moves. Their past borrowing record "
+        "stays as it is."
     )
 
     intake, outcome = st.columns([0.82, 1.18], gap="large")
     with intake:
         st.markdown(
-            '<div class="section-rule"><strong>Case intake</strong><span>Editable declared terms</span></div>',
+            '<div class="section-rule"><strong>The case</strong>'
+            "<span>Pick an applicant, adjust the four editable numbers</span></div>",
             unsafe_allow_html=True,
         )
         intake_method = st.radio(
-            "Input method",
-            ["Curated case", "Applicant ID", "JSON package"],
+            "How to pick the case",
+            ["Example applicant", "Look up by number", "Upload a file"],
             horizontal=True,
             help=(
                 "The JSON package is the fastest repeatable entry method. It still requires an "
@@ -327,8 +350,8 @@ with review_tab:
         selected_profile = profiles[0]
         uploaded_package: dict[str, int | float] | None = None
         package_error = False
-        if intake_method == "Curated case":
-            selected_label = st.selectbox("Curated scenario", list(profile_by_label))
+        if intake_method == "Example applicant":
+            selected_label = st.selectbox("Choose one", list(profile_by_label))
             selected_profile = profile_by_label[selected_label]
             application_id = int(selected_profile["application_id"])
             st.markdown(
@@ -336,7 +359,7 @@ with review_tab:
                 unsafe_allow_html=True,
             )
             st.caption(selected_profile["description"])
-        elif intake_method == "Applicant ID":
+        elif intake_method == "Look up by number":
             application_id = int(
                 st.number_input(
                     "Known local applicant ID",
@@ -390,7 +413,7 @@ with review_tab:
             case_lookup_valid = False
 
         defaults = dict(base_inputs)
-        if intake_method == "Curated case":
+        if intake_method == "Example applicant":
             defaults.update(selected_profile.get("overrides", {}))
         elif uploaded_package is not None:
             defaults.update(
@@ -404,18 +427,16 @@ with review_tab:
         field_key = f"{intake_method}-{intake_fingerprint(fingerprint_payload)}"
         input_left, input_right = st.columns(2)
         with input_left:
-            render_source_badges("annual_income")
             annual_income = st.number_input(
-                "Annual income",
+                "Yearly income",
                 min_value=1.0,
                 value=float(defaults["annual_income"] or 1.0),
                 step=5_000.0,
                 key=f"income-{field_key}",
                 help=EDITABLE_FIELDS["annual_income"]["note"],
             )
-            render_source_badges("annual_annuity")
             annual_annuity = st.number_input(
-                "Annual proposed repayment",
+                "Yearly repayment on this loan",
                 min_value=1.0,
                 value=float(defaults["annual_annuity"] or 1.0),
                 step=1_000.0,
@@ -423,39 +444,40 @@ with review_tab:
                 help=EDITABLE_FIELDS["annual_annuity"]["note"],
             )
         with input_right:
-            render_source_badges("requested_credit")
             requested_credit = st.number_input(
-                "Requested credit",
+                "Amount being borrowed",
                 min_value=1.0,
                 value=float(defaults["requested_credit"] or 1.0),
                 step=5_000.0,
                 key=f"credit-{field_key}",
                 help=EDITABLE_FIELDS["requested_credit"]["note"],
             )
-            render_source_badges("goods_price")
             goods_price = st.number_input(
-                "Goods price",
+                "Price of the item being bought",
                 min_value=1.0,
                 value=float(defaults["goods_price"] or 1.0),
                 step=5_000.0,
                 key=f"goods-{field_key}",
                 help=EDITABLE_FIELDS["goods_price"]["note"],
             )
-        st.caption(
-            "All remaining model factors are read from the local application and historical "
-            "feature stores or computed automatically; they are not reviewer-entered fields."
+        st.markdown(
+            '<div class="smallprint">These four are the only numbers you can change. '
+            "Everything else about this applicant &mdash; their past borrowing, repayment "
+            "record and account history &mdash; is read from the records on file and cannot "
+            "be edited here.</div>",
+            unsafe_allow_html=True,
         )
         default_outage = bool(selected_profile.get("simulate_history_unavailable")) and (
-            intake_method == "Curated case"
+            intake_method == "Example applicant"
         )
         simulate_outage = st.checkbox(
-            "Simulate missing history feature-store row",
+            "Test what happens if this applicant's past records are missing",
             value=default_outage,
             help="A controlled failure-mode demonstration; it does not delete or alter local data.",
             key=f"outage-{field_key}",
         )
         can_evaluate = case_lookup_valid and not (
-            intake_method == "JSON package" and uploaded_package is None
+            intake_method == "Upload a file" and uploaded_package is None
         )
         evaluate = st.button(
             "Evaluate case",
@@ -464,8 +486,14 @@ with review_tab:
             disabled=not can_evaluate,
         )
         with st.expander(
-            f"Where all {input_schema['selected_factor_count']} model factors come from"
+            "Where these numbers come from"
         ):
+            st.caption("The four numbers you can edit, and what each is normally taken from.")
+            render_field_provenance()
+            st.caption(
+                f"The other {input_schema['selected_factor_count'] - 4} things the model reads "
+                "are assembled from records on file or calculated automatically."
+            )
             source_rows = pd.DataFrame(input_schema["source_summary"])[
                 ["label", "factor_count", "integration_status"]
             ].rename(
@@ -519,7 +547,8 @@ with review_tab:
     result = st.session_state.get("latest_result")
     with outcome:
         st.markdown(
-            '<div class="section-rule"><strong>Routing band</strong><span>Decision support, never an autonomous decision</span></div>',
+            '<div class="section-rule"><strong>The assessment</strong>'
+            "<span>Decision support for a human reviewer, never an automatic decision</span></div>",
             unsafe_allow_html=True,
         )
         if result:

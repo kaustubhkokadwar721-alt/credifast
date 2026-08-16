@@ -4,63 +4,65 @@
   "profiles": [
     {
       "key": "strong_full",
-      "label": "Strong · complete evidence",
+      "label": "Good record, full history",
       "application_id": 178290,
-      "description": "Low estimated risk with four historical source families.",
+      "description": "Has borrowed before and repaid on time. We hold all four kinds of past record.",
       "demo_intent": "Show the standard evidence-rich review route.",
       "overrides": {},
       "simulate_history_unavailable": false
     },
     {
       "key": "boundary_full",
-      "label": "Boundary · human judgement",
+      "label": "Borderline \u00b7 needs judgement",
       "application_id": 104351,
-      "description": "A full-history case positioned close to the 10% research grade boundary.",
+      "description": "Full history, but the estimate sits right on the line between two grades.",
       "demo_intent": "Show boundary-aware manual review without changing the probability.",
       "overrides": {},
       "simulate_history_unavailable": false
     },
     {
       "key": "partial_history",
-      "label": "Partial history · blended model",
+      "label": "Partial history",
       "application_id": 138022,
-      "description": "Three source families activate the frozen 75% history / 25% application blend.",
+      "description": "Some past records are missing, so the estimate leans partly on the application form.",
       "demo_intent": "Show validated model disagreement and data-limited routing.",
       "overrides": {},
       "simulate_history_unavailable": false
     },
     {
       "key": "thin_history",
-      "label": "Thin file · zero sources",
+      "label": "New to credit",
       "application_id": 296239,
-      "description": "No historical source family is available for this applicant.",
+      "description": "No past borrowing record at all. The hardest case to assess, and a common one.",
       "demo_intent": "Show visible uncertainty and mandatory data-limited review.",
       "overrides": {},
       "simulate_history_unavailable": false
     },
     {
       "key": "high_risk",
-      "label": "High risk · escalated review",
+      "label": "Poor repayment record",
       "application_id": 176483,
-      "description": "High repayment-difficulty probability with otherwise complete history.",
+      "description": "Full history available, and it shows a high chance of difficulty repaying.",
       "demo_intent": "Show adverse evidence without presenting an autonomous decline.",
       "overrides": {},
       "simulate_history_unavailable": false
     },
     {
       "key": "affordability_stress",
-      "label": "Affordability stress · what-if",
+      "label": "Repayment stretched",
       "application_id": 178290,
-      "description": "The strong applicant with annual proposed repayment increased to 60,750.",
+      "description": "The good applicant above, but asked to repay far more each year.",
       "demo_intent": "Show that affordability can change while historical risk evidence remains separate.",
-      "overrides": {"annual_annuity": 60750.0},
+      "overrides": {
+        "annual_annuity": 60750.0
+      },
       "simulate_history_unavailable": false
     },
     {
       "key": "store_outage",
-      "label": "Feature-store outage · fail closed",
+      "label": "Records unavailable",
       "application_id": 178290,
-      "description": "A controlled simulation in which the historical feature-store row is unavailable.",
+      "description": "A test of what happens when past records cannot be read at all.",
       "demo_intent": "Show explicit pipeline-quality flags and fail-closed review routing.",
       "overrides": {},
       "simulate_history_unavailable": true
