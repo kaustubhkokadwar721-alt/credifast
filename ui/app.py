@@ -141,10 +141,10 @@ def money(value: float | None) -> str:
 
 
 FIELD_PLAIN_NAMES = {
-    "annual_income": "Yearly income",
-    "requested_credit": "Amount being borrowed",
-    "annual_annuity": "Yearly repayment on this loan",
-    "goods_price": "Price of the item being bought",
+    "annual_income": "Annual income",
+    "requested_credit": "Requested credit",
+    "annual_annuity": "Annual proposed repayment",
+    "goods_price": "Goods price",
 }
 
 
@@ -428,7 +428,7 @@ with review_tab:
         input_left, input_right = st.columns(2)
         with input_left:
             annual_income = st.number_input(
-                "Yearly income",
+                "Annual income",
                 min_value=1.0,
                 value=float(defaults["annual_income"] or 1.0),
                 step=5_000.0,
@@ -436,7 +436,7 @@ with review_tab:
                 help=EDITABLE_FIELDS["annual_income"]["note"],
             )
             annual_annuity = st.number_input(
-                "Yearly repayment on this loan",
+                "Annual proposed repayment",
                 min_value=1.0,
                 value=float(defaults["annual_annuity"] or 1.0),
                 step=1_000.0,
@@ -445,7 +445,7 @@ with review_tab:
             )
         with input_right:
             requested_credit = st.number_input(
-                "Amount being borrowed",
+                "Requested credit",
                 min_value=1.0,
                 value=float(defaults["requested_credit"] or 1.0),
                 step=5_000.0,
@@ -453,7 +453,7 @@ with review_tab:
                 help=EDITABLE_FIELDS["requested_credit"]["note"],
             )
             goods_price = st.number_input(
-                "Price of the item being bought",
+                "Goods price",
                 min_value=1.0,
                 value=float(defaults["goods_price"] or 1.0),
                 step=5_000.0,
@@ -471,7 +471,7 @@ with review_tab:
             intake_method == "Example applicant"
         )
         simulate_outage = st.checkbox(
-            "Test what happens if this applicant's past records are missing",
+            "Simulate missing history feature-store row",
             value=default_outage,
             help="A controlled failure-mode demonstration; it does not delete or alter local data.",
             key=f"outage-{field_key}",
