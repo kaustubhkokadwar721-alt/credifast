@@ -11,10 +11,18 @@ venv/
 .env
 .env.*
 !.env.example
-data/raw/
+# Raw Kaggle CSVs. Seven of these exceed GitHub's 100 MB hard limit (data/raw is 2.5 GB
+# in total), so they cannot be pushed without Git LFS. Nothing at runtime reads them --
+# they are training inputs only. application_test.csv IS tracked: LocalModelRuntime needs
+# it to score a case.
+data/raw/*
+!data/raw/application_test.csv
 data/interim/
-data/processed/
-artifacts/models/
+# Processed stores are row-level, but the history feature store is required to run the
+# frozen V1 path, so it is tracked deliberately.
+data/processed/*
+!data/processed/history_features.parquet
+# Model binaries are tracked so a fresh clone can actually run. ~15 MB total.
 artifacts/features/
 artifacts/*.log
 mlruns/
@@ -27,3 +35,6 @@ build/
 # Regenerate with: python scripts/export_demo_workbook.py --application-id <id>
 examples/intake_workbook/
 examples/intake_workbook.xlsx
+
+# Interrupted V2 experiment binaries. codex.md: "These files alone are not results."
+artifacts/models/research/

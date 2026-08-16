@@ -4,3 +4,11 @@
 *.json text eol=lf
 *.toml text eol=lf
 *.ps1 text eol=crlf
+
+# Keep data and model files byte-exact. Line-ending conversion would change their
+# contents and break the SHA-256 values recorded in artifacts/data_manifest.json.
+*.csv -text
+*.parquet -text binary
+*.joblib -text binary
+*.xlsx -text binary
+*.woff2 -text binary
