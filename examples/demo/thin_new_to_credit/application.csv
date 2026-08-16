@@ -1,0 +1,2 @@
+applicant_ref,annual_income,requested_credit,annual_annuity,goods_price,contract_type,income_type,education_type,housing_type,owns_car,car_age_years,owns_realty,employment_years,address_vintage_years,id_document_age_years,has_email,has_work_phone
+DEMO-02-THIN,360000,150000,60000,145000,Cash loans,Working,Secondary / secondary special,With parents,N,,N,0.8,1.5,0.9,Y,N

@@ -1,0 +1,313 @@
+{
+  "policy_version": "1.0.0",
+  "source": "artifacts/input_coverage_audit.json",
+  "expected_route_change_threshold": 0.01,
+  "tiers": {
+    "sheet.tradelines": "EXPECTED",
+    "sheet.account_months": "EXPECTED",
+    "account_months.balance_and_limit": "EXPECTED",
+    "application.annual_annuity": "REQUIRED",
+    "application.requested_credit": "REQUIRED",
+    "tradelines.opened_days_ago": "EXPECTED",
+    "application.employment_years": "REQUIRED",
+    "application.goods_price": "EXPECTED",
+    "tradelines.current_balance": "OPTIONAL",
+    "tradelines.sanctioned_amount": "OPTIONAL",
+    "account_months.installments_total": "OPTIONAL",
+    "application.education_type": "REQUIRED",
+    "account_months.contract_status": "OPTIONAL",
+    "tradelines.status": "OPTIONAL",
+    "tradelines.credit_limit": "OPTIONAL",
+    "account_months.installments_remaining": "OPTIONAL",
+    "account_months.balance": "OPTIONAL",
+    "application.income_type": "REQUIRED",
+    "application.address_vintage_years": "OPTIONAL",
+    "application.annual_income": "REQUIRED",
+    "sheet.dpd_history": "OPTIONAL",
+    "application.car_age_years": "OPTIONAL",
+    "application.id_document_age_years": "OPTIONAL",
+    "account_months.dpd_days": "OPTIONAL",
+    "account_months.dpd_days_tolerant": "OPTIONAL",
+    "account_months.credit_limit": "OPTIONAL",
+    "sheet.enquiries": "OPTIONAL",
+    "application.has_work_phone": "OPTIONAL",
+    "tradelines.annuity": "OPTIONAL",
+    "tradelines.credit_type": "OPTIONAL",
+    "tradelines.overdue_amount": "OPTIONAL",
+    "application.has_email": "OPTIONAL",
+    "application.housing_type": "OPTIONAL",
+    "application.contract_type": "OPTIONAL",
+    "tradelines.days_overdue": "OPTIONAL",
+    "tradelines.times_prolonged": "OPTIONAL",
+    "application.owns_car": "OPTIONAL",
+    "application.owns_realty": "OPTIONAL"
+  },
+  "detail": {
+    "sheet.tradelines": {
+      "tier": "EXPECTED",
+      "reason": "absence moves 23.57% of cases between review queues, at or above the 1.00% boundary",
+      "route_change_share": 0.23567541786805993,
+      "gain_share": 0.28825010817501606,
+      "delta_average_precision": -0.025284827592208903
+    },
+    "sheet.account_months": {
+      "tier": "EXPECTED",
+      "reason": "absence moves 23.57% of cases between review queues, at or above the 1.00% boundary",
+      "route_change_share": 0.23567541786805993,
+      "gain_share": 0.23937459353122303,
+      "delta_average_precision": -0.0195506313291178
+    },
+    "account_months.balance_and_limit": {
+      "tier": "EXPECTED",
+      "reason": "absence moves 1.77% of cases between review queues, at or above the 1.00% boundary",
+      "route_change_share": 0.017711969128709867,
+      "gain_share": 0.05105918823105987,
+      "delta_average_precision": -0.005094866942152332
+    },
+    "application.annual_annuity": {
+      "tier": "REQUIRED",
+      "reason": "the parser rejects an intake package without it",
+      "route_change_share": 0.014503436165369523,
+      "gain_share": 0.14907754809797327,
+      "delta_average_precision": -0.01614963914337675
+    },
+    "application.requested_credit": {
+      "tier": "REQUIRED",
+      "reason": "the parser rejects an intake package without it",
+      "route_change_share": 0.014416719058252217,
+      "gain_share": 0.18279382644858402,
+      "delta_average_precision": -0.017141999869389496
+    },
+    "tradelines.opened_days_ago": {
+      "tier": "EXPECTED",
+      "reason": "absence moves 1.34% of cases between review queues, at or above the 1.00% boundary",
+      "route_change_share": 0.013397793049623864,
+      "gain_share": 0.11691146894366633,
+      "delta_average_precision": -0.006164782953517578
+    },
+    "application.employment_years": {
+      "tier": "REQUIRED",
+      "reason": "the parser rejects an intake package without it",
+      "route_change_share": 0.010948034773559955,
+      "gain_share": 0.07511550340348133,
+      "delta_average_precision": -0.004654142691733837
+    },
+    "application.goods_price": {
+      "tier": "EXPECTED",
+      "reason": "absence moves 1.04% of cases between review queues, at or above the 1.00% boundary",
+      "route_change_share": 0.010362694300518135,
+      "gain_share": 0.07732865160072543,
+      "delta_average_precision": -0.0067257557270342105
+    },
+    "tradelines.current_balance": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.97% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.009668957443579682,
+      "gain_share": 0.06195928055553715,
+      "delta_average_precision": -0.005209100812494177
+    },
+    "tradelines.sanctioned_amount": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.84% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.008433238667158064,
+      "gain_share": 0.07942455931410623,
+      "delta_average_precision": -0.00508069811177464
+    },
+    "account_months.installments_total": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.64% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.006438745203460013,
+      "gain_share": 0.017351121666399384,
+      "delta_average_precision": -0.0014701057823377495
+    },
+    "application.education_type": {
+      "tier": "REQUIRED",
+      "reason": "the parser rejects an intake package without it",
+      "route_change_share": 0.0061352353285494396,
+      "gain_share": 0.03816056638623145,
+      "delta_average_precision": -0.004573390830987373
+    },
+    "account_months.contract_status": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.60% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.006026838944652806,
+      "gain_share": 0.019934256166229274,
+      "delta_average_precision": -0.0017617388097525277
+    },
+    "tradelines.status": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.60% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.005961801114314827,
+      "gain_share": 0.038952922292386,
+      "delta_average_precision": -0.0031025415011821655
+    },
+    "tradelines.credit_limit": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.57% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.005701649792962907,
+      "gain_share": 0.01305648293396333,
+      "delta_average_precision": -0.0020269867298380317
+    },
+    "account_months.installments_remaining": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.43% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.004335855355865328,
+      "gain_share": 0.019377259420931832,
+      "delta_average_precision": -0.001438045807525823
+    },
+    "account_months.balance": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.40% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.004010666204175429,
+      "gain_share": 0.011840322644282867,
+      "delta_average_precision": -0.0005476527223471916
+    },
+    "application.income_type": {
+      "tier": "REQUIRED",
+      "reason": "the parser rejects an intake package without it",
+      "route_change_share": 0.003988986927396102,
+      "gain_share": 0.013803169191652354,
+      "delta_average_precision": -0.0019224580769720279
+    },
+    "application.address_vintage_years": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.36% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.003577080668588896,
+      "gain_share": 0.01884634050490399,
+      "delta_average_precision": -0.0015779867326342623
+    },
+    "application.annual_income": {
+      "tier": "REQUIRED",
+      "reason": "the parser rejects an intake package without it",
+      "route_change_share": 0.0034686842846922625,
+      "gain_share": 0.034550309194538706,
+      "delta_average_precision": -0.0024100146763680885
+    },
+    "sheet.dpd_history": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.33% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.003338608624016303,
+      "gain_share": 0.0221754083117633,
+      "delta_average_precision": -0.001662256435023629
+    },
+    "application.car_age_years": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.26% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.0025581546599605437,
+      "gain_share": 0.013433864174246269,
+      "delta_average_precision": -0.0009091955692156206
+    },
+    "application.id_document_age_years": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.24% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.0024497582760639107,
+      "gain_share": 0.016631397267476502,
+      "delta_average_precision": -0.0013378326577005717
+    },
+    "account_months.dpd_days": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.22% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.0021896069547119906,
+      "gain_share": 0.028372590448352154,
+      "delta_average_precision": -0.0007564517677000615
+    },
+    "account_months.dpd_days_tolerant": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.21% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.0021028898475946843,
+      "gain_share": 0.02953094135219921,
+      "delta_average_precision": -0.0016440012404616011
+    },
+    "account_months.credit_limit": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.21% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.0020812105708153577,
+      "gain_share": 0.00508750521969861,
+      "delta_average_precision": -2.9330110678571497e-05
+    },
+    "sheet.enquiries": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.13% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.0012573980532009452,
+      "gain_share": 0.005043286206379127,
+      "delta_average_precision": 3.131064963690644e-05
+    },
+    "application.has_work_phone": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.12% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.0012357187764216186,
+      "gain_share": 0.00685488448419154,
+      "delta_average_precision": -0.001172850067233222
+    },
+    "tradelines.annuity": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.07% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.0007154161337177792,
+      "gain_share": 0.005680463392405489,
+      "delta_average_precision": -9.450792649734474e-05
+    },
+    "tradelines.credit_type": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.07% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.0006503783033797992,
+      "gain_share": 0.0008450614568460295,
+      "delta_average_precision": 6.860433469818572e-05
+    },
+    "tradelines.overdue_amount": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.04% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.0004119062588072062,
+      "gain_share": 0.011330793534884878,
+      "delta_average_precision": -0.001714948967249913
+    },
+    "application.has_email": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.04% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.00039022698202787956,
+      "gain_share": 0.00044211800786024693,
+      "delta_average_precision": 1.364288359023691e-05
+    },
+    "application.housing_type": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.03% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.00034686842846922626,
+      "gain_share": 0.0030775251639758986,
+      "delta_average_precision": -0.0004255964580003324
+    },
+    "application.contract_type": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.03% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.0002601513213519197,
+      "gain_share": 0.006384573945812042,
+      "delta_average_precision": -0.0004236718571429543
+    },
+    "tradelines.days_overdue": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.03% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.0002601513213519197,
+      "gain_share": 0.003240069867285605,
+      "delta_average_precision": -0.000300568069853846
+    },
+    "tradelines.times_prolonged": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.01% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.00013007566067595985,
+      "gain_share": 0.0002641257043443581,
+      "delta_average_precision": 9.851660588422462e-07
+    },
+    "application.owns_car": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.01% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 6.503783033797993e-05,
+      "gain_share": 0.0001350002243237201,
+      "delta_average_precision": 4.01250737516734e-06
+    },
+    "application.owns_realty": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.00% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 2.167927677932664e-05,
+      "gain_share": 0.00024844368210370207,
+      "delta_average_precision": -1.7422314710469067e-05
+    }
+  }
+}

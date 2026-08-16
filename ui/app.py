@@ -10,6 +10,9 @@ from typing import Any
 
 import pandas as pd
 import streamlit as st
+from new_application import render as render_new_application
+from portfolio import render as render_portfolio
+from scenario import render as render_scenario
 
 from credifast.input_sources import EDITABLE_FIELDS, normalize_intake_package
 from credifast.model_runtime import LocalModelRuntime, get_local_model_runtime
@@ -160,28 +163,95 @@ def intake_fingerprint(payload: dict[str, int | float]) -> str:
 
 
 def route_copy(route: str) -> str:
+    """What happens next, and who does it. Never an outcome."""
+
     return {
-        "STANDARD_REVIEW": "Evidence is sufficiently complete for the normal human review queue.",
-        "BOUNDARY_REVIEW": "The estimate is near a policy boundary; judgement and supporting evidence are required.",
-        "DATA_LIMITED_REVIEW": "Historical evidence is incomplete or unavailable. The case must not be auto-routed.",
-        "HIGH_RISK_REVIEW": "The model estimate warrants enhanced human review; this is not an autonomous decline.",
-        "AFFORDABILITY_REVIEW": "The proposed repayment screen exceeds the research limit and needs separate review.",
-    }.get(route, "Human review is required.")
+        "STANDARD_REVIEW": (
+            "What happens next: a credit reviewer picks this up in the normal manual review "
+            "queue. Nothing has been approved or declined."
+        ),
+        "BOUNDARY_REVIEW": (
+            "What happens next: a credit reviewer looks at this one closely, because the "
+            "estimate sits close to a policy boundary and could fall either side of it."
+        ),
+        "DATA_LIMITED_REVIEW": (
+            "What happens next: a credit reviewer must gather the missing records before this "
+            "case can go further. It stays in manual review no matter how low the estimate is."
+        ),
+        "HIGH_RISK_REVIEW": (
+            "What happens next: a senior credit reviewer takes this one. That is a queue, not "
+            "a decline — no decision has been made."
+        ),
+        "AFFORDABILITY_REVIEW": (
+            "What happens next: a credit reviewer checks affordability separately, because the "
+            "proposed repayment is large relative to declared income."
+        ),
+    }.get(route, "What happens next: a credit reviewer handles this case in manual review.")
+
+
+def natural_frequency(probability: float) -> str:
+    """State a probability as a count of people, scaling the denominator to stay honest.
+
+    A 0.31% estimate rendered as "about 0 out of 100" reads as certainty of repayment. The
+    denominator therefore grows until the numerator is a number a reader can picture.
+    """
+
+    if probability >= 0.01:
+        return f"about <strong>{probability * 100:.0f}</strong> out of every 100"
+    if probability >= 0.001:
+        return f"about <strong>{probability * 1000:.0f}</strong> out of every 1,000"
+    if probability > 0:
+        return "<strong>fewer than 1</strong> in every 1,000"
+    return "<strong>none</strong> of"
+
+
+def effect_size(log_odds: float) -> str:
+    """Describe a contribution in words a non-specialist can act on.
+
+    The exact log-odds figure stays available under Technical detail for auditors; it is
+    not a number a reviewer can reason about at a glance.
+    """
+
+    magnitude = abs(log_odds)
+    if magnitude >= 0.5:
+        return "large effect"
+    if magnitude >= 0.2:
+        return "moderate effect"
+    return "small effect"
 
 
 def render_reasons(reasons: dict[str, Any] | None, side: str) -> None:
     items = (reasons or {}).get(side, [])
     if not items:
-        st.caption("No explanation rows are available for this component.")
+        st.caption("Nothing in this applicant's record pushed the estimate this way.")
         return
+    direction = "raised" if side == "adverse" else "lowered"
     for item in items:
         st.markdown(
             f"""<div class="evidence-row">
-              <div class="evidence-code">{item['code']}</div>
               <div class="evidence-copy">{item['description']}</div>
-              <div class="evidence-weight">{item['log_odds_contribution']:+.3f} log odds</div>
+              <div class="evidence-weight">{effect_size(item['log_odds_contribution'])}</div>
             </div>""",
             unsafe_allow_html=True,
+        )
+    with st.expander("Technical detail"):
+        st.caption(
+            f"Contributions that {direction} the estimate, in pre-calibration log odds. "
+            "These describe how the model behaved, not why the applicant behaved as they did."
+        )
+        st.dataframe(
+            pd.DataFrame(
+                [
+                    {
+                        "Code": item["code"],
+                        "Factor group": item["description"],
+                        "Log odds": round(item["log_odds_contribution"], 3),
+                    }
+                    for item in items
+                ]
+            ),
+            hide_index=True,
+            width="stretch",
         )
 
 
@@ -202,9 +272,32 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-review_tab, evidence_tab, governance_tab = st.tabs(
-    ["Review workbench", "Model evidence", "Responsible AI"]
+(
+    review_tab,
+    new_application_tab,
+    scenario_tab,
+    portfolio_tab,
+    evidence_tab,
+    governance_tab,
+) = st.tabs(
+    [
+        "Review workbench",
+        "New application",
+        "Scenario analysis",
+        "Portfolio",
+        "Model evidence",
+        "Responsible AI",
+    ]
 )
+
+with new_application_tab:
+    render_new_application()
+
+with scenario_tab:
+    render_scenario()
+
+with portfolio_tab:
+    render_portfolio()
 
 with review_tab:
     profiles = runtime.profiles()
@@ -438,10 +531,24 @@ with review_tab:
                   <div class="route-note">{route_copy(route)}</div>
                 </div>
                 <div class="score-line">
-                  <div class="score-cell"><span class="score-label">Risk estimate</span><span class="score-value">{result['repayment_difficulty_probability']:.2%}</span></div>
-                  <div class="score-cell"><span class="score-label">Internal score</span><span class="score-value">{result['internal_credit_score']}</span></div>
+                  <div class="score-cell"><span class="score-label">Repayment-difficulty probability</span><span class="score-value">{result['repayment_difficulty_probability']:.2%}</span></div>
+                  <div class="score-cell"><span class="score-label">Internal research score</span><span class="score-value">{result['internal_credit_score']}</span></div>
                   <div class="score-cell"><span class="score-label">Risk grade</span><span class="score-value">{result['risk_grade']}</span></div>
-                  <div class="score-cell"><span class="score-label">Confidence</span><span class="score-value">{result['confidence']}</span></div>
+                  <div class="score-cell"><span class="score-label">Data confidence</span><span class="score-value">{result['confidence']}</span></div>
+                </div>""",
+                unsafe_allow_html=True,
+            )
+            st.markdown(
+                f"""<div class="smallprint">
+                <strong>Reading these four:</strong>
+                of applicants whose records look like this one, the model estimates
+                {natural_frequency(result['repayment_difficulty_probability'])}
+                would run into difficulty repaying.
+                The internal research score ({result['internal_credit_score']}) and grade
+                ({result['risk_grade']}) are the same estimate on a 300&ndash;900 scale and an
+                A&ndash;E band, for easier comparison between cases &mdash; they are not a bureau
+                score. Data confidence ({str(result['confidence']).lower()}) describes how complete
+                this applicant's records were, not how likely they are to repay.
                 </div>""",
                 unsafe_allow_html=True,
             )
@@ -463,46 +570,70 @@ with review_tab:
                 )
 
             st.markdown(
-                '<div class="section-rule"><strong>Evidence coverage</strong><span>Model composition and source availability</span></div>',
+                '<div class="section-rule"><strong>Records we had</strong>'
+                "<span>What this estimate was built from</span></div>",
                 unsafe_allow_html=True,
             )
-            coverage = pd.DataFrame(
-                [
-                    {
-                        "Historical source families": result["available_history_sources"],
-                        "Availability segment": result["history_segment"],
-                        "History model weight": result["history_weight"],
-                        "History probability": result["history_component_probability"],
-                        "Application probability": result["application_component_probability"],
-                    }
-                ]
-            )
-            st.dataframe(
-                coverage,
-                hide_index=True,
-                use_container_width=True,
-                column_config={
-                    "History model weight": st.column_config.NumberColumn(format="percent"),
-                    "History probability": st.column_config.NumberColumn(format="percent"),
-                    "Application probability": st.column_config.NumberColumn(format="percent"),
-                },
+            st.markdown(
+                f"""<div class="smallprint">
+                We found <strong>{result['available_history_sources']} of 5</strong> kinds of past
+                borrowing record for this applicant. The more of these exist, the more the estimate
+                rests on how they have actually repaid before, rather than on the application form
+                alone.
+                </div>""",
+                unsafe_allow_html=True,
             )
             for reason in result["confidence_reasons"]:
                 st.caption(reason)
+            with st.expander("Technical detail"):
+                coverage = pd.DataFrame(
+                    [
+                        {
+                            "Historical source families": result["available_history_sources"],
+                            "Availability segment": result["history_segment"],
+                            "History model weight": result["history_weight"],
+                            "History probability": result["history_component_probability"],
+                            "Application probability": result["application_component_probability"],
+                        }
+                    ]
+                )
+                st.dataframe(
+                    coverage,
+                    hide_index=True,
+                    width="stretch",
+                    column_config={
+                        "History model weight": st.column_config.NumberColumn(format="percent"),
+                        "History probability": st.column_config.NumberColumn(format="percent"),
+                        "Application probability": st.column_config.NumberColumn(
+                            format="percent"
+                        ),
+                    },
+                )
+                st.caption(
+                    "Two models score the case: one using past borrowing records, one using the "
+                    "application form alone. The weight shows how much each contributed."
+                )
         else:
             st.info("Evaluate a valid case to assemble the routing docket.")
 
     if result:
         st.markdown(
-            '<div class="section-rule"><strong>Reason ledger</strong><span>Grouped SHAP contributions in pre-calibration log odds</span></div>',
+            '<div class="section-rule"><strong>What moved this estimate</strong>'
+            "<span>The applicant's records, grouped</span></div>",
+            unsafe_allow_html=True,
+        )
+        st.markdown(
+            '<div class="smallprint">These describe how the model weighed this applicant\'s '
+            "records. They explain the estimate; they are not the reasons a lender would give "
+            "an applicant, and they do not prove what caused what.</div>",
             unsafe_allow_html=True,
         )
         adverse, favorable = st.columns(2, gap="large")
         with adverse:
-            st.subheader("Evidence increasing estimated risk")
+            st.subheader("Pushed the estimate up")
             render_reasons(result["reasons"], "adverse")
         with favorable:
-            st.subheader("Evidence reducing estimated risk")
+            st.subheader("Pushed the estimate down")
             render_reasons(result["reasons"], "favorable")
 
         terms, affordability = st.columns(2, gap="large")
@@ -526,16 +657,24 @@ with review_tab:
         with affordability:
             aff = result["affordability"]
             st.markdown(
-                '<div class="section-rule"><strong>Separate affordability screen</strong><span>Transparent research rule</span></div>',
+                '<div class="section-rule"><strong>Can they afford it?</strong>'
+                "<span>Checked separately from repayment risk</span></div>",
                 unsafe_allow_html=True,
             )
             st.markdown(
                 f"""<table class="metric-ledger">
-                  <tr><td>Screen status</td><td>{aff['status'].replace('_', ' ')}</td></tr>
-                  <tr><td>Proposed repayment / income</td><td>{aff['proposed_repayment_to_income']:.1%}</td></tr>
-                  <tr><td>Research screen maximum</td><td>{aff['maximum_research_ratio']:.0%}</td></tr>
-                  <tr><td>Estimated credit at maximum</td><td>{money(aff['estimated_credit_at_maximum_ratio'])}</td></tr>
+                  <tr><td>Affordability check</td><td>{aff['status'].replace('_', ' ')}</td></tr>
+                  <tr><td>Repayment takes this share of income</td><td>{aff['proposed_repayment_to_income']:.1%}</td></tr>
+                  <tr><td>Most this research rule allows</td><td>{aff['maximum_research_ratio']:.0%} of income</td></tr>
+                  <tr><td>Borrowing that would reach that share</td><td>{money(aff['estimated_credit_at_maximum_ratio'])}</td></tr>
                 </table>""",
+                unsafe_allow_html=True,
+            )
+            st.markdown(
+                '<div class="smallprint">This is a separate question from whether they repay on '
+                "time. Someone with a spotless record can still be taking on more than their "
+                "income supports, and this check is what catches that. It counts only the "
+                "repayment proposed here &mdash; it cannot see loans held elsewhere.</div>",
                 unsafe_allow_html=True,
             )
             st.caption(aff["note"])

@@ -1,0 +1,16 @@
+account_ref,account_kind,months_ago,dpd_days,dpd_days_tolerant,contract_status,balance,credit_limit,installments_total,installments_remaining
+POS-8001,installment,0,0,0,Active,,,24.0,15.0
+POS-8001,installment,1,0,0,Active,,,24.0,16.0
+POS-8001,installment,2,0,0,Active,,,24.0,17.0
+POS-8001,installment,3,0,0,Active,,,24.0,18.0
+POS-8001,installment,4,0,0,Active,,,24.0,19.0
+POS-8001,installment,5,0,0,Active,,,24.0,20.0
+POS-8001,installment,6,0,0,Active,,,24.0,21.0
+POS-8001,installment,7,0,0,Active,,,24.0,22.0
+POS-8001,installment,8,0,0,Active,,,24.0,23.0
+CC-9001,revolving,0,0,0,Active,70400.0,80000.0,,
+CC-9001,revolving,1,0,0,Active,73600.0,80000.0,,
+CC-9001,revolving,2,0,0,Active,75200.0,80000.0,,
+CC-9001,revolving,3,0,0,Active,70400.0,80000.0,,
+CC-9001,revolving,4,0,0,Active,73600.0,80000.0,,
+CC-9001,revolving,5,0,0,Active,75200.0,80000.0,,

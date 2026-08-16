@@ -1,0 +1,1367 @@
+{
+  "run_version": "1.0.0",
+  "model": "collectible-input-lightgbm-v3_extended v0.3.0",
+  "validated": false,
+  "partition": "calibration",
+  "holdout_evaluated": false,
+  "calibration_rows": 46127,
+  "baseline": {
+    "average_precision": 0.225072285150399,
+    "roc_auc": 0.7413263843252482
+  },
+  "expected_route_change_threshold": 0.01,
+  "coverage_counts": {
+    "DIRECT": 16,
+    "AGGREGATED": 86,
+    "DERIVED": 12,
+    "UNREACHABLE": 0
+  },
+  "unreachable_features": [],
+  "not_emitted_by_parser": [
+    "APPLICATION_MISSING_COUNT"
+  ],
+  "coverage": [
+    {
+      "feature": "AMT_ANNUITY",
+      "classification": "DIRECT",
+      "produced_by": "application.annual_annuity"
+    },
+    {
+      "feature": "AMT_CREDIT",
+      "classification": "DIRECT",
+      "produced_by": "application.requested_credit"
+    },
+    {
+      "feature": "AMT_GOODS_PRICE",
+      "classification": "DIRECT",
+      "produced_by": "application.goods_price"
+    },
+    {
+      "feature": "AMT_INCOME_TOTAL",
+      "classification": "DIRECT",
+      "produced_by": "application.annual_income"
+    },
+    {
+      "feature": "AMT_REQ_CREDIT_BUREAU_DAY",
+      "classification": "AGGREGATED",
+      "produced_by": "enquiries"
+    },
+    {
+      "feature": "AMT_REQ_CREDIT_BUREAU_HOUR",
+      "classification": "AGGREGATED",
+      "produced_by": "enquiries"
+    },
+    {
+      "feature": "AMT_REQ_CREDIT_BUREAU_MON",
+      "classification": "AGGREGATED",
+      "produced_by": "enquiries"
+    },
+    {
+      "feature": "AMT_REQ_CREDIT_BUREAU_QRT",
+      "classification": "AGGREGATED",
+      "produced_by": "enquiries"
+    },
+    {
+      "feature": "AMT_REQ_CREDIT_BUREAU_WEEK",
+      "classification": "AGGREGATED",
+      "produced_by": "enquiries"
+    },
+    {
+      "feature": "AMT_REQ_CREDIT_BUREAU_YEAR",
+      "classification": "AGGREGATED",
+      "produced_by": "enquiries"
+    },
+    {
+      "feature": "ANNUITY_TO_INCOME",
+      "classification": "DERIVED",
+      "produced_by": "AMT_ANNUITY + AMT_INCOME_TOTAL"
+    },
+    {
+      "feature": "APPLICATION_MISSING_COUNT",
+      "classification": "DERIVED",
+      "produced_by": "computed during feature alignment, not supplied at intake"
+    },
+    {
+      "feature": "BB_CLOSED_MONTHS",
+      "classification": "AGGREGATED",
+      "produced_by": "dpd_history"
+    },
+    {
+      "feature": "BB_DEFAULT_MONTHS",
+      "classification": "AGGREGATED",
+      "produced_by": "dpd_history"
+    },
+    {
+      "feature": "BB_DELINQUENT_MONTHS",
+      "classification": "AGGREGATED",
+      "produced_by": "dpd_history"
+    },
+    {
+      "feature": "BB_DELINQUENT_MONTH_RATE",
+      "classification": "AGGREGATED",
+      "produced_by": "dpd_history"
+    },
+    {
+      "feature": "BB_MAX_DELINQUENCY_LEVEL",
+      "classification": "AGGREGATED",
+      "produced_by": "dpd_history"
+    },
+    {
+      "feature": "BB_MONTHS_OBSERVED",
+      "classification": "AGGREGATED",
+      "produced_by": "dpd_history"
+    },
+    {
+      "feature": "BB_RECENT_12M_DELINQUENT_MONTHS",
+      "classification": "AGGREGATED",
+      "produced_by": "dpd_history"
+    },
+    {
+      "feature": "BB_SEVERE_DELINQUENT_MONTHS",
+      "classification": "AGGREGATED",
+      "produced_by": "dpd_history"
+    },
+    {
+      "feature": "BB_SEVERE_DELINQUENT_MONTH_RATE",
+      "classification": "AGGREGATED",
+      "produced_by": "dpd_history"
+    },
+    {
+      "feature": "BB_UNKNOWN_MONTHS",
+      "classification": "AGGREGATED",
+      "produced_by": "dpd_history"
+    },
+    {
+      "feature": "BUREAU_ACTIVE_COUNT",
+      "classification": "AGGREGATED",
+      "produced_by": "tradelines"
+    },
+    {
+      "feature": "BUREAU_ACTIVE_RATE",
+      "classification": "AGGREGATED",
+      "produced_by": "tradelines"
+    },
+    {
+      "feature": "BUREAU_ANNUITY_SUM",
+      "classification": "AGGREGATED",
+      "produced_by": "tradelines"
+    },
+    {
+      "feature": "BUREAU_BAD_DEBT_COUNT",
+      "classification": "AGGREGATED",
+      "produced_by": "tradelines"
+    },
+    {
+      "feature": "BUREAU_CLOSED_COUNT",
+      "classification": "AGGREGATED",
+      "produced_by": "tradelines"
+    },
+    {
+      "feature": "BUREAU_CREDIT_COUNT",
+      "classification": "AGGREGATED",
+      "produced_by": "tradelines"
+    },
+    {
+      "feature": "BUREAU_CREDIT_MAX",
+      "classification": "AGGREGATED",
+      "produced_by": "tradelines"
+    },
+    {
+      "feature": "BUREAU_CREDIT_MEAN",
+      "classification": "AGGREGATED",
+      "produced_by": "tradelines"
+    },
+    {
+      "feature": "BUREAU_CREDIT_SUM",
+      "classification": "AGGREGATED",
+      "produced_by": "tradelines"
+    },
+    {
+      "feature": "BUREAU_CREDIT_TYPE_COUNT",
+      "classification": "AGGREGATED",
+      "produced_by": "tradelines"
+    },
+    {
+      "feature": "BUREAU_DAYS_OVERDUE_MAX",
+      "classification": "AGGREGATED",
+      "produced_by": "tradelines"
+    },
+    {
+      "feature": "BUREAU_DAYS_OVERDUE_MEAN",
+      "classification": "AGGREGATED",
+      "produced_by": "tradelines"
+    },
+    {
+      "feature": "BUREAU_DAYS_SINCE_CREDIT_MAX",
+      "classification": "AGGREGATED",
+      "produced_by": "tradelines"
+    },
+    {
+      "feature": "BUREAU_DAYS_SINCE_CREDIT_MEAN",
+      "classification": "AGGREGATED",
+      "produced_by": "tradelines"
+    },
+    {
+      "feature": "BUREAU_DAYS_SINCE_CREDIT_MIN",
+      "classification": "AGGREGATED",
+      "produced_by": "tradelines"
+    },
+    {
+      "feature": "BUREAU_DEBT_MAX",
+      "classification": "AGGREGATED",
+      "produced_by": "tradelines"
+    },
+    {
+      "feature": "BUREAU_DEBT_MEAN",
+      "classification": "AGGREGATED",
+      "produced_by": "tradelines"
+    },
+    {
+      "feature": "BUREAU_DEBT_SUM",
+      "classification": "AGGREGATED",
+      "produced_by": "tradelines"
+    },
+    {
+      "feature": "BUREAU_DEBT_TO_CREDIT",
+      "classification": "AGGREGATED",
+      "produced_by": "tradelines"
+    },
+    {
+      "feature": "BUREAU_LIMIT_SUM",
+      "classification": "AGGREGATED",
+      "produced_by": "tradelines"
+    },
+    {
+      "feature": "BUREAU_OVERDUE_CREDIT_COUNT",
+      "classification": "AGGREGATED",
+      "produced_by": "tradelines"
+    },
+    {
+      "feature": "BUREAU_OVERDUE_MAX",
+      "classification": "AGGREGATED",
+      "produced_by": "tradelines"
+    },
+    {
+      "feature": "BUREAU_OVERDUE_RATE",
+      "classification": "AGGREGATED",
+      "produced_by": "tradelines"
+    },
+    {
+      "feature": "BUREAU_OVERDUE_SUM",
+      "classification": "AGGREGATED",
+      "produced_by": "tradelines"
+    },
+    {
+      "feature": "BUREAU_OVERDUE_TO_CREDIT",
+      "classification": "AGGREGATED",
+      "produced_by": "tradelines"
+    },
+    {
+      "feature": "BUREAU_PROLONG_MAX",
+      "classification": "AGGREGATED",
+      "produced_by": "tradelines"
+    },
+    {
+      "feature": "BUREAU_PROLONG_SUM",
+      "classification": "AGGREGATED",
+      "produced_by": "tradelines"
+    },
+    {
+      "feature": "BUREAU_RECENT_12M_COUNT",
+      "classification": "AGGREGATED",
+      "produced_by": "tradelines"
+    },
+    {
+      "feature": "BUREAU_RECENT_24M_COUNT",
+      "classification": "AGGREGATED",
+      "produced_by": "tradelines"
+    },
+    {
+      "feature": "BUREAU_SOLD_COUNT",
+      "classification": "AGGREGATED",
+      "produced_by": "tradelines"
+    },
+    {
+      "feature": "BUREAU_UNIQUE_CREDIT_COUNT",
+      "classification": "AGGREGATED",
+      "produced_by": "tradelines"
+    },
+    {
+      "feature": "CC_ACTIVE_MONTH_COUNT",
+      "classification": "AGGREGATED",
+      "produced_by": "account_months"
+    },
+    {
+      "feature": "CC_BALANCE_MAX",
+      "classification": "AGGREGATED",
+      "produced_by": "account_months"
+    },
+    {
+      "feature": "CC_BALANCE_MEAN",
+      "classification": "AGGREGATED",
+      "produced_by": "account_months"
+    },
+    {
+      "feature": "CC_BALANCE_SUM",
+      "classification": "AGGREGATED",
+      "produced_by": "account_months"
+    },
+    {
+      "feature": "CC_CONTRACT_COUNT",
+      "classification": "AGGREGATED",
+      "produced_by": "account_months"
+    },
+    {
+      "feature": "CC_DPD_DEF_MONTH_COUNT",
+      "classification": "AGGREGATED",
+      "produced_by": "account_months"
+    },
+    {
+      "feature": "CC_DPD_DEF_MONTH_RATE",
+      "classification": "AGGREGATED",
+      "produced_by": "account_months"
+    },
+    {
+      "feature": "CC_DPD_MAX",
+      "classification": "AGGREGATED",
+      "produced_by": "account_months"
+    },
+    {
+      "feature": "CC_DPD_MEAN",
+      "classification": "AGGREGATED",
+      "produced_by": "account_months"
+    },
+    {
+      "feature": "CC_DPD_MONTH_COUNT",
+      "classification": "AGGREGATED",
+      "produced_by": "account_months"
+    },
+    {
+      "feature": "CC_DPD_MONTH_RATE",
+      "classification": "AGGREGATED",
+      "produced_by": "account_months"
+    },
+    {
+      "feature": "CC_LATEST_MONTH",
+      "classification": "AGGREGATED",
+      "produced_by": "account_months"
+    },
+    {
+      "feature": "CC_LIMIT_MAX",
+      "classification": "AGGREGATED",
+      "produced_by": "account_months"
+    },
+    {
+      "feature": "CC_LIMIT_MEAN",
+      "classification": "AGGREGATED",
+      "produced_by": "account_months"
+    },
+    {
+      "feature": "CC_MONTH_COUNT",
+      "classification": "AGGREGATED",
+      "produced_by": "account_months"
+    },
+    {
+      "feature": "CC_OLDEST_MONTH",
+      "classification": "AGGREGATED",
+      "produced_by": "account_months"
+    },
+    {
+      "feature": "CC_RECENT_12M_DPD_COUNT",
+      "classification": "AGGREGATED",
+      "produced_by": "account_months"
+    },
+    {
+      "feature": "CC_UTILIZATION_MAX",
+      "classification": "AGGREGATED",
+      "produced_by": "account_months"
+    },
+    {
+      "feature": "CC_UTILIZATION_MEAN",
+      "classification": "AGGREGATED",
+      "produced_by": "account_months"
+    },
+    {
+      "feature": "CREDIT_TO_ANNUITY",
+      "classification": "DERIVED",
+      "produced_by": "AMT_CREDIT + AMT_ANNUITY"
+    },
+    {
+      "feature": "CREDIT_TO_GOODS",
+      "classification": "DERIVED",
+      "produced_by": "AMT_CREDIT + AMT_GOODS_PRICE"
+    },
+    {
+      "feature": "CREDIT_TO_INCOME",
+      "classification": "DERIVED",
+      "produced_by": "AMT_CREDIT + AMT_INCOME_TOTAL"
+    },
+    {
+      "feature": "DOWN_PAYMENT_RATE",
+      "classification": "DERIVED",
+      "produced_by": "AMT_CREDIT + AMT_GOODS_PRICE"
+    },
+    {
+      "feature": "EMPLOYMENT_SENTINEL",
+      "classification": "DERIVED",
+      "produced_by": "EMPLOYMENT_YEARS"
+    },
+    {
+      "feature": "EMPLOYMENT_YEARS",
+      "classification": "DIRECT",
+      "produced_by": "application.employment_years"
+    },
+    {
+      "feature": "EXTERNAL_DEBT_TO_INCOME",
+      "classification": "DERIVED",
+      "produced_by": "BUREAU_DEBT_SUM + AMT_INCOME_TOTAL"
+    },
+    {
+      "feature": "FLAG_EMAIL",
+      "classification": "DIRECT",
+      "produced_by": "application.has_email"
+    },
+    {
+      "feature": "FLAG_OWN_CAR",
+      "classification": "DIRECT",
+      "produced_by": "application.owns_car"
+    },
+    {
+      "feature": "FLAG_OWN_REALTY",
+      "classification": "DIRECT",
+      "produced_by": "application.owns_realty"
+    },
+    {
+      "feature": "FLAG_WORK_PHONE",
+      "classification": "DIRECT",
+      "produced_by": "application.has_work_phone"
+    },
+    {
+      "feature": "HAS_BUREAU_HISTORY",
+      "classification": "DERIVED",
+      "produced_by": "presence of rows in tradelines"
+    },
+    {
+      "feature": "HAS_CREDIT_CARD_HISTORY",
+      "classification": "DERIVED",
+      "produced_by": "presence of rows in account_months"
+    },
+    {
+      "feature": "HAS_POS_HISTORY",
+      "classification": "DERIVED",
+      "produced_by": "presence of rows in account_months"
+    },
+    {
+      "feature": "ID_AGE_YEARS",
+      "classification": "DIRECT",
+      "produced_by": "application.id_document_age_years"
+    },
+    {
+      "feature": "NAME_CONTRACT_TYPE",
+      "classification": "DIRECT",
+      "produced_by": "application.contract_type"
+    },
+    {
+      "feature": "NAME_EDUCATION_TYPE",
+      "classification": "DIRECT",
+      "produced_by": "application.education_type"
+    },
+    {
+      "feature": "NAME_HOUSING_TYPE",
+      "classification": "DIRECT",
+      "produced_by": "application.housing_type"
+    },
+    {
+      "feature": "NAME_INCOME_TYPE",
+      "classification": "DIRECT",
+      "produced_by": "application.income_type"
+    },
+    {
+      "feature": "OWN_CAR_AGE",
+      "classification": "DIRECT",
+      "produced_by": "application.car_age_years"
+    },
+    {
+      "feature": "POS_ACTIVE_MONTH_COUNT",
+      "classification": "AGGREGATED",
+      "produced_by": "account_months"
+    },
+    {
+      "feature": "POS_COMPLETED_MONTH_COUNT",
+      "classification": "AGGREGATED",
+      "produced_by": "account_months"
+    },
+    {
+      "feature": "POS_CONTRACT_COUNT",
+      "classification": "AGGREGATED",
+      "produced_by": "account_months"
+    },
+    {
+      "feature": "POS_DPD_DEF_MAX",
+      "classification": "AGGREGATED",
+      "produced_by": "account_months"
+    },
+    {
+      "feature": "POS_DPD_DEF_MEAN",
+      "classification": "AGGREGATED",
+      "produced_by": "account_months"
+    },
+    {
+      "feature": "POS_DPD_DEF_MONTH_COUNT",
+      "classification": "AGGREGATED",
+      "produced_by": "account_months"
+    },
+    {
+      "feature": "POS_DPD_DEF_MONTH_RATE",
+      "classification": "AGGREGATED",
+      "produced_by": "account_months"
+    },
+    {
+      "feature": "POS_DPD_MAX",
+      "classification": "AGGREGATED",
+      "produced_by": "account_months"
+    },
+    {
+      "feature": "POS_DPD_MEAN",
+      "classification": "AGGREGATED",
+      "produced_by": "account_months"
+    },
+    {
+      "feature": "POS_DPD_MONTH_COUNT",
+      "classification": "AGGREGATED",
+      "produced_by": "account_months"
+    },
+    {
+      "feature": "POS_DPD_MONTH_RATE",
+      "classification": "AGGREGATED",
+      "produced_by": "account_months"
+    },
+    {
+      "feature": "POS_DPD_SUM",
+      "classification": "AGGREGATED",
+      "produced_by": "account_months"
+    },
+    {
+      "feature": "POS_FUTURE_INSTALLMENTS_MEAN",
+      "classification": "AGGREGATED",
+      "produced_by": "account_months"
+    },
+    {
+      "feature": "POS_FUTURE_INSTALLMENTS_MIN",
+      "classification": "AGGREGATED",
+      "produced_by": "account_months"
+    },
+    {
+      "feature": "POS_INSTALLMENT_COUNT_MAX",
+      "classification": "AGGREGATED",
+      "produced_by": "account_months"
+    },
+    {
+      "feature": "POS_INSTALLMENT_COUNT_MEAN",
+      "classification": "AGGREGATED",
+      "produced_by": "account_months"
+    },
+    {
+      "feature": "POS_LATEST_MONTH",
+      "classification": "AGGREGATED",
+      "produced_by": "account_months"
+    },
+    {
+      "feature": "POS_MONTH_COUNT",
+      "classification": "AGGREGATED",
+      "produced_by": "account_months"
+    },
+    {
+      "feature": "POS_OLDEST_MONTH",
+      "classification": "AGGREGATED",
+      "produced_by": "account_months"
+    },
+    {
+      "feature": "POS_RECENT_12M_DPD_COUNT",
+      "classification": "AGGREGATED",
+      "produced_by": "account_months"
+    },
+    {
+      "feature": "REGISTRATION_YEARS",
+      "classification": "DIRECT",
+      "produced_by": "application.address_vintage_years"
+    },
+    {
+      "feature": "TOTAL_OBLIGATION_TO_INCOME",
+      "classification": "DERIVED",
+      "produced_by": "AMT_ANNUITY + BUREAU_ANNUITY_SUM + AMT_INCOME_TOTAL"
+    }
+  ],
+  "gain_share_by_feature": {
+    "AMT_ANNUITY": 0.0201243448220436,
+    "AMT_CREDIT": 0.012618306924644548,
+    "AMT_GOODS_PRICE": 0.02253244538966921,
+    "AMT_INCOME_TOTAL": 0.004355362066572549,
+    "AMT_REQ_CREDIT_BUREAU_DAY": 0.0003544764874362328,
+    "AMT_REQ_CREDIT_BUREAU_HOUR": 2.6497250716641608e-05,
+    "AMT_REQ_CREDIT_BUREAU_MON": 0.0005403558724581524,
+    "AMT_REQ_CREDIT_BUREAU_QRT": 0.002228617952779106,
+    "AMT_REQ_CREDIT_BUREAU_WEEK": 0.00021546096869723907,
+    "AMT_REQ_CREDIT_BUREAU_YEAR": 0.0016778776742917545,
+    "ANNUITY_TO_INCOME": 0.01622679885435812,
+    "APPLICATION_MISSING_COUNT": 0.005881316283774627,
+    "BB_CLOSED_MONTHS": 0.002833095337935147,
+    "BB_DEFAULT_MONTHS": 0.0003843458552333534,
+    "BB_DELINQUENT_MONTHS": 0.0009834096088482244,
+    "BB_DELINQUENT_MONTH_RATE": 0.010982792088942754,
+    "BB_MAX_DELINQUENCY_LEVEL": 0.0001563045894289514,
+    "BB_MONTHS_OBSERVED": 0.0023126860704074125,
+    "BB_RECENT_12M_DELINQUENT_MONTHS": 0.00163812431773959,
+    "BB_SEVERE_DELINQUENT_MONTHS": 0.00013567368021599196,
+    "BB_SEVERE_DELINQUENT_MONTH_RATE": 0.00045978754429523857,
+    "BB_UNKNOWN_MONTHS": 0.002289189218716636,
+    "BUREAU_ACTIVE_COUNT": 0.014790447739627609,
+    "BUREAU_ACTIVE_RATE": 0.020188622541632697,
+    "BUREAU_ANNUITY_SUM": 0.0022526923741265263,
+    "BUREAU_BAD_DEBT_COUNT": 0.0,
+    "BUREAU_CLOSED_COUNT": 0.0017117946935525845,
+    "BUREAU_CREDIT_COUNT": 0.0034202295933466334,
+    "BUREAU_CREDIT_MAX": 0.010845681046659374,
+    "BUREAU_CREDIT_MEAN": 0.01301630953542157,
+    "BUREAU_CREDIT_SUM": 0.008352477206934628,
+    "BUREAU_CREDIT_TYPE_COUNT": 0.0008450614568460295,
+    "BUREAU_DAYS_OVERDUE_MAX": 0.0007645430999952812,
+    "BUREAU_DAYS_OVERDUE_MEAN": 0.000546150779062489,
+    "BUREAU_DAYS_SINCE_CREDIT_MAX": 0.004019320908195793,
+    "BUREAU_DAYS_SINCE_CREDIT_MEAN": 0.04652191631180664,
+    "BUREAU_DAYS_SINCE_CREDIT_MIN": 0.033993085697765976,
+    "BUREAU_DEBT_MAX": 0.004087788484086953,
+    "BUREAU_DEBT_MEAN": 0.0070621595514015045,
+    "BUREAU_DEBT_SUM": 0.0029125574085548532,
+    "BUREAU_DEBT_TO_CREDIT": 0.04343707776575542,
+    "BUREAU_LIMIT_SUM": 0.01305648293396333,
+    "BUREAU_OVERDUE_CREDIT_COUNT": 5.216145897908592e-05,
+    "BUREAU_OVERDUE_MAX": 0.005296288814755801,
+    "BUREAU_OVERDUE_RATE": 0.0018772145292487489,
+    "BUREAU_OVERDUE_SUM": 0.0022614909607938383,
+    "BUREAU_OVERDUE_TO_CREDIT": 0.003773013759335238,
+    "BUREAU_PROLONG_MAX": 0.0002641257043443581,
+    "BUREAU_PROLONG_SUM": 0.0,
+    "BUREAU_RECENT_12M_COUNT": 0.017628972493093722,
+    "BUREAU_RECENT_24M_COUNT": 0.014748173532804205,
+    "BUREAU_SOLD_COUNT": 0.0022620573175731106,
+    "BUREAU_UNIQUE_CREDIT_COUNT": 0.0003747421113346664,
+    "CC_ACTIVE_MONTH_COUNT": 0.00882758057105942,
+    "CC_BALANCE_MAX": 0.005125635193815015,
+    "CC_BALANCE_MEAN": 0.004637393229792951,
+    "CC_BALANCE_SUM": 0.002077294220674902,
+    "CC_CONTRACT_COUNT": 7.096327067361799e-05,
+    "CC_DPD_DEF_MONTH_COUNT": 0.00018110482739624767,
+    "CC_DPD_DEF_MONTH_RATE": 0.0004611759318377659,
+    "CC_DPD_MAX": 0.00045092719731361776,
+    "CC_DPD_MEAN": 0.0019198802559663045,
+    "CC_DPD_MONTH_COUNT": 0.0003204310576714502,
+    "CC_DPD_MONTH_RATE": 0.0007554289707046675,
+    "CC_LATEST_MONTH": 0.00017328188124950535,
+    "CC_LIMIT_MAX": 0.0008525217396338423,
+    "CC_LIMIT_MEAN": 0.004234983480064768,
+    "CC_MONTH_COUNT": 0.005905342605888791,
+    "CC_OLDEST_MONTH": 0.009522998979136551,
+    "CC_RECENT_12M_DPD_COUNT": 0.0005697074020653842,
+    "CC_UTILIZATION_MAX": 0.01832405633793843,
+    "CC_UTILIZATION_MEAN": 0.03273513189312144,
+    "CREDIT_TO_ANNUITY": 0.1092986334032926,
+    "CREDIT_TO_GOODS": 0.023413039073380167,
+    "CREDIT_TO_INCOME": 0.006080679909590656,
+    "DOWN_PAYMENT_RATE": 0.031383167137676055,
+    "EMPLOYMENT_SENTINEL": 0.0018446873646236872,
+    "EMPLOYMENT_YEARS": 0.07327081603885766,
+    "EXTERNAL_DEBT_TO_INCOME": 0.004459697345738421,
+    "FLAG_EMAIL": 0.00044211800786024693,
+    "FLAG_OWN_CAR": 0.0001350002243237201,
+    "FLAG_OWN_REALTY": 0.00024844368210370207,
+    "FLAG_WORK_PHONE": 0.00685488448419154,
+    "HAS_BUREAU_HISTORY": 5.245351374007223e-05,
+    "HAS_CREDIT_CARD_HISTORY": 5.6669960617226114e-05,
+    "HAS_POS_HISTORY": 0.0,
+    "ID_AGE_YEARS": 0.016631397267476502,
+    "NAME_CONTRACT_TYPE": 0.006384573945812042,
+    "NAME_EDUCATION_TYPE": 0.03816056638623145,
+    "NAME_HOUSING_TYPE": 0.0030775251639758986,
+    "NAME_INCOME_TYPE": 0.013803169191652354,
+    "OWN_CAR_AGE": 0.013433864174246269,
+    "POS_ACTIVE_MONTH_COUNT": 0.008878041158167671,
+    "POS_COMPLETED_MONTH_COUNT": 0.002228634437002183,
+    "POS_CONTRACT_COUNT": 0.006749555536764066,
+    "POS_DPD_DEF_MAX": 0.005199890059313947,
+    "POS_DPD_DEF_MEAN": 0.01718834924030199,
+    "POS_DPD_DEF_MONTH_COUNT": 0.0008921402189754265,
+    "POS_DPD_DEF_MONTH_RATE": 0.005608281074373831,
+    "POS_DPD_MAX": 0.0021950342249650616,
+    "POS_DPD_MEAN": 0.005173720751620469,
+    "POS_DPD_MONTH_COUNT": 0.0012423595552088983,
+    "POS_DPD_MONTH_RATE": 0.00515246499002097,
+    "POS_DPD_SUM": 0.0010264040212804007,
+    "POS_FUTURE_INSTALLMENTS_MEAN": 0.019158191375533824,
+    "POS_FUTURE_INSTALLMENTS_MIN": 0.0002190680453980052,
+    "POS_INSTALLMENT_COUNT_MAX": 0.012091883124172127,
+    "POS_INSTALLMENT_COUNT_MEAN": 0.0052592385422272556,
+    "POS_LATEST_MONTH": 0.009675628663950643,
+    "POS_MONTH_COUNT": 0.006363761495894757,
+    "POS_OLDEST_MONTH": 0.01835987594851191,
+    "POS_RECENT_12M_DPD_COUNT": 0.00956623202153493,
+    "REGISTRATION_YEARS": 0.01884634050490399,
+    "TOTAL_OBLIGATION_TO_INCOME": 0.003427771018278963
+  },
+  "ablation": [
+    {
+      "field": "sheet.tradelines",
+      "scope": "whole sheet",
+      "features_masked": 33,
+      "gain_share": 0.28825010817501606,
+      "delta_average_precision": -0.025284827592208903,
+      "delta_roc_auc": -0.02249518475135759,
+      "mean_absolute_probability_shift": 0.020027791531383104,
+      "route_change_share": 0.23567541786805993
+    },
+    {
+      "field": "sheet.account_months",
+      "scope": "whole sheet",
+      "features_masked": 39,
+      "gain_share": 0.23937459353122303,
+      "delta_average_precision": -0.0195506313291178,
+      "delta_roc_auc": -0.01994505726382323,
+      "mean_absolute_probability_shift": 0.0166561176775676,
+      "route_change_share": 0.23567541786805993
+    },
+    {
+      "field": "account_months.balance_and_limit",
+      "scope": "sheet column",
+      "features_masked": 2,
+      "gain_share": 0.05105918823105987,
+      "delta_average_precision": -0.005094866942152332,
+      "delta_roc_auc": -0.002698317481691248,
+      "mean_absolute_probability_shift": 0.0051644139667932675,
+      "route_change_share": 0.017711969128709867
+    },
+    {
+      "field": "application.annual_annuity",
+      "scope": "application field",
+      "features_masked": 4,
+      "gain_share": 0.14907754809797327,
+      "delta_average_precision": -0.01614963914337675,
+      "delta_roc_auc": -0.013924875560427985,
+      "mean_absolute_probability_shift": 0.015048150492888431,
+      "route_change_share": 0.014503436165369523
+    },
+    {
+      "field": "application.requested_credit",
+      "scope": "application field",
+      "features_masked": 5,
+      "gain_share": 0.18279382644858402,
+      "delta_average_precision": -0.017141999869389496,
+      "delta_roc_auc": -0.0174320778075584,
+      "mean_absolute_probability_shift": 0.015670082404450045,
+      "route_change_share": 0.014416719058252217
+    },
+    {
+      "field": "tradelines.opened_days_ago",
+      "scope": "sheet column",
+      "features_masked": 5,
+      "gain_share": 0.11691146894366633,
+      "delta_average_precision": -0.006164782953517578,
+      "delta_roc_auc": -0.004291173893746558,
+      "mean_absolute_probability_shift": 0.01044121369062159,
+      "route_change_share": 0.013397793049623864
+    },
+    {
+      "field": "application.employment_years",
+      "scope": "application field",
+      "features_masked": 2,
+      "gain_share": 0.07511550340348133,
+      "delta_average_precision": -0.004654142691733837,
+      "delta_roc_auc": -0.0055865927448286445,
+      "mean_absolute_probability_shift": 0.011871283342099874,
+      "route_change_share": 0.010948034773559955
+    },
+    {
+      "field": "application.goods_price",
+      "scope": "application field",
+      "features_masked": 3,
+      "gain_share": 0.07732865160072543,
+      "delta_average_precision": -0.0067257557270342105,
+      "delta_roc_auc": -0.006224125408308523,
+      "mean_absolute_probability_shift": 0.011219881265213536,
+      "route_change_share": 0.010362694300518135
+    },
+    {
+      "field": "tradelines.current_balance",
+      "scope": "sheet column",
+      "features_masked": 5,
+      "gain_share": 0.06195928055553715,
+      "delta_average_precision": -0.005209100812494177,
+      "delta_roc_auc": -0.0037723490117447245,
+      "mean_absolute_probability_shift": 0.007812450042507272,
+      "route_change_share": 0.009668957443579682
+    },
+    {
+      "field": "tradelines.sanctioned_amount",
+      "scope": "sheet column",
+      "features_masked": 5,
+      "gain_share": 0.07942455931410623,
+      "delta_average_precision": -0.00508069811177464,
+      "delta_roc_auc": -0.004295176204650586,
+      "mean_absolute_probability_shift": 0.0073463007644483805,
+      "route_change_share": 0.008433238667158064
+    },
+    {
+      "field": "account_months.installments_total",
+      "scope": "sheet column",
+      "features_masked": 2,
+      "gain_share": 0.017351121666399384,
+      "delta_average_precision": -0.0014701057823377495,
+      "delta_roc_auc": -0.0017995833695674257,
+      "mean_absolute_probability_shift": 0.004391115917514285,
+      "route_change_share": 0.006438745203460013
+    },
+    {
+      "field": "application.education_type",
+      "scope": "application field",
+      "features_masked": 1,
+      "gain_share": 0.03816056638623145,
+      "delta_average_precision": -0.004573390830987373,
+      "delta_roc_auc": -0.0046163173252971035,
+      "mean_absolute_probability_shift": 0.006889454352832321,
+      "route_change_share": 0.0061352353285494396
+    },
+    {
+      "field": "account_months.contract_status",
+      "scope": "sheet column",
+      "features_masked": 3,
+      "gain_share": 0.019934256166229274,
+      "delta_average_precision": -0.0017617388097525277,
+      "delta_roc_auc": -0.0016123360138599052,
+      "mean_absolute_probability_shift": 0.003624161777020666,
+      "route_change_share": 0.006026838944652806
+    },
+    {
+      "field": "tradelines.status",
+      "scope": "sheet column",
+      "features_masked": 5,
+      "gain_share": 0.038952922292386,
+      "delta_average_precision": -0.0031025415011821655,
+      "delta_roc_auc": -0.0018160105760305356,
+      "mean_absolute_probability_shift": 0.004772009154679653,
+      "route_change_share": 0.005961801114314827
+    },
+    {
+      "field": "tradelines.credit_limit",
+      "scope": "sheet column",
+      "features_masked": 1,
+      "gain_share": 0.01305648293396333,
+      "delta_average_precision": -0.0020269867298380317,
+      "delta_roc_auc": -0.0015551131003664898,
+      "mean_absolute_probability_shift": 0.004804259092319569,
+      "route_change_share": 0.005701649792962907
+    },
+    {
+      "field": "account_months.installments_remaining",
+      "scope": "sheet column",
+      "features_masked": 2,
+      "gain_share": 0.019377259420931832,
+      "delta_average_precision": -0.001438045807525823,
+      "delta_roc_auc": -0.0012146316988645989,
+      "mean_absolute_probability_shift": 0.003174006024238716,
+      "route_change_share": 0.004335855355865328
+    },
+    {
+      "field": "account_months.balance",
+      "scope": "sheet column",
+      "features_masked": 3,
+      "gain_share": 0.011840322644282867,
+      "delta_average_precision": -0.0005476527223471916,
+      "delta_roc_auc": -0.0007761633406915269,
+      "mean_absolute_probability_shift": 0.0010373883344159558,
+      "route_change_share": 0.004010666204175429
+    },
+    {
+      "field": "application.income_type",
+      "scope": "application field",
+      "features_masked": 1,
+      "gain_share": 0.013803169191652354,
+      "delta_average_precision": -0.0019224580769720279,
+      "delta_roc_auc": -0.0020552278121699352,
+      "mean_absolute_probability_shift": 0.004381014710463966,
+      "route_change_share": 0.003988986927396102
+    },
+    {
+      "field": "application.address_vintage_years",
+      "scope": "application field",
+      "features_masked": 1,
+      "gain_share": 0.01884634050490399,
+      "delta_average_precision": -0.0015779867326342623,
+      "delta_roc_auc": -0.0006258993642226374,
+      "mean_absolute_probability_shift": 0.0033927163254031533,
+      "route_change_share": 0.003577080668588896
+    },
+    {
+      "field": "application.annual_income",
+      "scope": "application field",
+      "features_masked": 5,
+      "gain_share": 0.034550309194538706,
+      "delta_average_precision": -0.0024100146763680885,
+      "delta_roc_auc": -0.0005634265840531727,
+      "mean_absolute_probability_shift": 0.003987843374927363,
+      "route_change_share": 0.0034686842846922625
+    },
+    {
+      "field": "sheet.dpd_history",
+      "scope": "whole sheet",
+      "features_masked": 10,
+      "gain_share": 0.0221754083117633,
+      "delta_average_precision": -0.001662256435023629,
+      "delta_roc_auc": -0.0013323389026165255,
+      "mean_absolute_probability_shift": 0.002519118132882166,
+      "route_change_share": 0.003338608624016303
+    },
+    {
+      "field": "application.car_age_years",
+      "scope": "application field",
+      "features_masked": 1,
+      "gain_share": 0.013433864174246269,
+      "delta_average_precision": -0.0009091955692156206,
+      "delta_roc_auc": -0.0008576280993433105,
+      "mean_absolute_probability_shift": 0.002497073377171518,
+      "route_change_share": 0.0025581546599605437
+    },
+    {
+      "field": "application.id_document_age_years",
+      "scope": "application field",
+      "features_masked": 1,
+      "gain_share": 0.016631397267476502,
+      "delta_average_precision": -0.0013378326577005717,
+      "delta_roc_auc": -0.0011991544079640315,
+      "mean_absolute_probability_shift": 0.003216680934897944,
+      "route_change_share": 0.0024497582760639107
+    },
+    {
+      "field": "account_months.dpd_days",
+      "scope": "sheet column",
+      "features_masked": 11,
+      "gain_share": 0.028372590448352154,
+      "delta_average_precision": -0.0007564517677000615,
+      "delta_roc_auc": -0.0016762716639958652,
+      "mean_absolute_probability_shift": 0.0022280666942869334,
+      "route_change_share": 0.0021896069547119906
+    },
+    {
+      "field": "account_months.dpd_days_tolerant",
+      "scope": "sheet column",
+      "features_masked": 6,
+      "gain_share": 0.02953094135219921,
+      "delta_average_precision": -0.0016440012404616011,
+      "delta_roc_auc": -0.0014950024435628206,
+      "mean_absolute_probability_shift": 0.0025904960278077807,
+      "route_change_share": 0.0021028898475946843
+    },
+    {
+      "field": "account_months.credit_limit",
+      "scope": "sheet column",
+      "features_masked": 2,
+      "gain_share": 0.00508750521969861,
+      "delta_average_precision": -2.9330110678571497e-05,
+      "delta_roc_auc": 0.0001903820770641218,
+      "mean_absolute_probability_shift": 0.0006244571799268393,
+      "route_change_share": 0.0020812105708153577
+    },
+    {
+      "field": "sheet.enquiries",
+      "scope": "whole sheet",
+      "features_masked": 6,
+      "gain_share": 0.005043286206379127,
+      "delta_average_precision": 3.131064963690644e-05,
+      "delta_roc_auc": -8.19777130556254e-05,
+      "mean_absolute_probability_shift": 0.0011438191105534168,
+      "route_change_share": 0.0012573980532009452
+    },
+    {
+      "field": "application.has_work_phone",
+      "scope": "application field",
+      "features_masked": 1,
+      "gain_share": 0.00685488448419154,
+      "delta_average_precision": -0.001172850067233222,
+      "delta_roc_auc": -0.0005314967556077077,
+      "mean_absolute_probability_shift": 0.0022559494806366417,
+      "route_change_share": 0.0012357187764216186
+    },
+    {
+      "field": "tradelines.annuity",
+      "scope": "sheet column",
+      "features_masked": 2,
+      "gain_share": 0.005680463392405489,
+      "delta_average_precision": -9.450792649734474e-05,
+      "delta_roc_auc": 0.00019347880179843013,
+      "mean_absolute_probability_shift": 0.0004651557626648348,
+      "route_change_share": 0.0007154161337177792
+    },
+    {
+      "field": "tradelines.credit_type",
+      "scope": "sheet column",
+      "features_masked": 1,
+      "gain_share": 0.0008450614568460295,
+      "delta_average_precision": 6.860433469818572e-05,
+      "delta_roc_auc": 3.7806639392456987e-06,
+      "mean_absolute_probability_shift": 0.0004432001884274665,
+      "route_change_share": 0.0006503783033797992
+    },
+    {
+      "field": "tradelines.overdue_amount",
+      "scope": "sheet column",
+      "features_masked": 3,
+      "gain_share": 0.011330793534884878,
+      "delta_average_precision": -0.001714948967249913,
+      "delta_roc_auc": -0.0003995661494979874,
+      "mean_absolute_probability_shift": 0.0004616005061711387,
+      "route_change_share": 0.0004119062588072062
+    },
+    {
+      "field": "application.has_email",
+      "scope": "application field",
+      "features_masked": 1,
+      "gain_share": 0.00044211800786024693,
+      "delta_average_precision": 1.364288359023691e-05,
+      "delta_roc_auc": 2.19937116603397e-05,
+      "mean_absolute_probability_shift": 0.000462978995271701,
+      "route_change_share": 0.00039022698202787956
+    },
+    {
+      "field": "application.housing_type",
+      "scope": "application field",
+      "features_masked": 1,
+      "gain_share": 0.0030775251639758986,
+      "delta_average_precision": -0.0004255964580003324,
+      "delta_roc_auc": -0.00029895742587360274,
+      "mean_absolute_probability_shift": 0.0007297297276931037,
+      "route_change_share": 0.00034686842846922626
+    },
+    {
+      "field": "application.contract_type",
+      "scope": "application field",
+      "features_masked": 1,
+      "gain_share": 0.006384573945812042,
+      "delta_average_precision": -0.0004236718571429543,
+      "delta_roc_auc": -0.0005414898673266055,
+      "mean_absolute_probability_shift": 0.0010550981154375443,
+      "route_change_share": 0.0002601513213519197
+    },
+    {
+      "field": "tradelines.days_overdue",
+      "scope": "sheet column",
+      "features_masked": 4,
+      "gain_share": 0.003240069867285605,
+      "delta_average_precision": -0.000300568069853846,
+      "delta_roc_auc": -7.207326012259596e-05,
+      "mean_absolute_probability_shift": 0.00030123579858164885,
+      "route_change_share": 0.0002601513213519197
+    },
+    {
+      "field": "tradelines.times_prolonged",
+      "scope": "sheet column",
+      "features_masked": 2,
+      "gain_share": 0.0002641257043443581,
+      "delta_average_precision": 9.851660588422462e-07,
+      "delta_roc_auc": -1.388143275526943e-05,
+      "mean_absolute_probability_shift": 0.000132540790024907,
+      "route_change_share": 0.00013007566067595985
+    },
+    {
+      "field": "application.owns_car",
+      "scope": "application field",
+      "features_masked": 1,
+      "gain_share": 0.0001350002243237201,
+      "delta_average_precision": 4.01250737516734e-06,
+      "delta_roc_auc": 4.432939291199034e-07,
+      "mean_absolute_probability_shift": 0.00035331605791500927,
+      "route_change_share": 6.503783033797993e-05
+    },
+    {
+      "field": "application.owns_realty",
+      "scope": "application field",
+      "features_masked": 1,
+      "gain_share": 0.00024844368210370207,
+      "delta_average_precision": -1.7422314710469067e-05,
+      "delta_roc_auc": -1.2393231707208407e-05,
+      "mean_absolute_probability_shift": 0.00027203469275842505,
+      "route_change_share": 2.167927677932664e-05
+    }
+  ],
+  "policy": {
+    "sheet.tradelines": {
+      "tier": "EXPECTED",
+      "reason": "absence moves 23.57% of cases between review queues, at or above the 1.00% boundary",
+      "route_change_share": 0.23567541786805993,
+      "gain_share": 0.28825010817501606,
+      "delta_average_precision": -0.025284827592208903
+    },
+    "sheet.account_months": {
+      "tier": "EXPECTED",
+      "reason": "absence moves 23.57% of cases between review queues, at or above the 1.00% boundary",
+      "route_change_share": 0.23567541786805993,
+      "gain_share": 0.23937459353122303,
+      "delta_average_precision": -0.0195506313291178
+    },
+    "account_months.balance_and_limit": {
+      "tier": "EXPECTED",
+      "reason": "absence moves 1.77% of cases between review queues, at or above the 1.00% boundary",
+      "route_change_share": 0.017711969128709867,
+      "gain_share": 0.05105918823105987,
+      "delta_average_precision": -0.005094866942152332
+    },
+    "application.annual_annuity": {
+      "tier": "REQUIRED",
+      "reason": "the parser rejects an intake package without it",
+      "route_change_share": 0.014503436165369523,
+      "gain_share": 0.14907754809797327,
+      "delta_average_precision": -0.01614963914337675
+    },
+    "application.requested_credit": {
+      "tier": "REQUIRED",
+      "reason": "the parser rejects an intake package without it",
+      "route_change_share": 0.014416719058252217,
+      "gain_share": 0.18279382644858402,
+      "delta_average_precision": -0.017141999869389496
+    },
+    "tradelines.opened_days_ago": {
+      "tier": "EXPECTED",
+      "reason": "absence moves 1.34% of cases between review queues, at or above the 1.00% boundary",
+      "route_change_share": 0.013397793049623864,
+      "gain_share": 0.11691146894366633,
+      "delta_average_precision": -0.006164782953517578
+    },
+    "application.employment_years": {
+      "tier": "REQUIRED",
+      "reason": "the parser rejects an intake package without it",
+      "route_change_share": 0.010948034773559955,
+      "gain_share": 0.07511550340348133,
+      "delta_average_precision": -0.004654142691733837
+    },
+    "application.goods_price": {
+      "tier": "EXPECTED",
+      "reason": "absence moves 1.04% of cases between review queues, at or above the 1.00% boundary",
+      "route_change_share": 0.010362694300518135,
+      "gain_share": 0.07732865160072543,
+      "delta_average_precision": -0.0067257557270342105
+    },
+    "tradelines.current_balance": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.97% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.009668957443579682,
+      "gain_share": 0.06195928055553715,
+      "delta_average_precision": -0.005209100812494177
+    },
+    "tradelines.sanctioned_amount": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.84% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.008433238667158064,
+      "gain_share": 0.07942455931410623,
+      "delta_average_precision": -0.00508069811177464
+    },
+    "account_months.installments_total": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.64% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.006438745203460013,
+      "gain_share": 0.017351121666399384,
+      "delta_average_precision": -0.0014701057823377495
+    },
+    "application.education_type": {
+      "tier": "REQUIRED",
+      "reason": "the parser rejects an intake package without it",
+      "route_change_share": 0.0061352353285494396,
+      "gain_share": 0.03816056638623145,
+      "delta_average_precision": -0.004573390830987373
+    },
+    "account_months.contract_status": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.60% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.006026838944652806,
+      "gain_share": 0.019934256166229274,
+      "delta_average_precision": -0.0017617388097525277
+    },
+    "tradelines.status": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.60% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.005961801114314827,
+      "gain_share": 0.038952922292386,
+      "delta_average_precision": -0.0031025415011821655
+    },
+    "tradelines.credit_limit": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.57% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.005701649792962907,
+      "gain_share": 0.01305648293396333,
+      "delta_average_precision": -0.0020269867298380317
+    },
+    "account_months.installments_remaining": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.43% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.004335855355865328,
+      "gain_share": 0.019377259420931832,
+      "delta_average_precision": -0.001438045807525823
+    },
+    "account_months.balance": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.40% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.004010666204175429,
+      "gain_share": 0.011840322644282867,
+      "delta_average_precision": -0.0005476527223471916
+    },
+    "application.income_type": {
+      "tier": "REQUIRED",
+      "reason": "the parser rejects an intake package without it",
+      "route_change_share": 0.003988986927396102,
+      "gain_share": 0.013803169191652354,
+      "delta_average_precision": -0.0019224580769720279
+    },
+    "application.address_vintage_years": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.36% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.003577080668588896,
+      "gain_share": 0.01884634050490399,
+      "delta_average_precision": -0.0015779867326342623
+    },
+    "application.annual_income": {
+      "tier": "REQUIRED",
+      "reason": "the parser rejects an intake package without it",
+      "route_change_share": 0.0034686842846922625,
+      "gain_share": 0.034550309194538706,
+      "delta_average_precision": -0.0024100146763680885
+    },
+    "sheet.dpd_history": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.33% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.003338608624016303,
+      "gain_share": 0.0221754083117633,
+      "delta_average_precision": -0.001662256435023629
+    },
+    "application.car_age_years": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.26% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.0025581546599605437,
+      "gain_share": 0.013433864174246269,
+      "delta_average_precision": -0.0009091955692156206
+    },
+    "application.id_document_age_years": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.24% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.0024497582760639107,
+      "gain_share": 0.016631397267476502,
+      "delta_average_precision": -0.0013378326577005717
+    },
+    "account_months.dpd_days": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.22% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.0021896069547119906,
+      "gain_share": 0.028372590448352154,
+      "delta_average_precision": -0.0007564517677000615
+    },
+    "account_months.dpd_days_tolerant": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.21% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.0021028898475946843,
+      "gain_share": 0.02953094135219921,
+      "delta_average_precision": -0.0016440012404616011
+    },
+    "account_months.credit_limit": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.21% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.0020812105708153577,
+      "gain_share": 0.00508750521969861,
+      "delta_average_precision": -2.9330110678571497e-05
+    },
+    "sheet.enquiries": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.13% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.0012573980532009452,
+      "gain_share": 0.005043286206379127,
+      "delta_average_precision": 3.131064963690644e-05
+    },
+    "application.has_work_phone": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.12% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.0012357187764216186,
+      "gain_share": 0.00685488448419154,
+      "delta_average_precision": -0.001172850067233222
+    },
+    "tradelines.annuity": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.07% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.0007154161337177792,
+      "gain_share": 0.005680463392405489,
+      "delta_average_precision": -9.450792649734474e-05
+    },
+    "tradelines.credit_type": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.07% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.0006503783033797992,
+      "gain_share": 0.0008450614568460295,
+      "delta_average_precision": 6.860433469818572e-05
+    },
+    "tradelines.overdue_amount": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.04% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.0004119062588072062,
+      "gain_share": 0.011330793534884878,
+      "delta_average_precision": -0.001714948967249913
+    },
+    "application.has_email": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.04% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.00039022698202787956,
+      "gain_share": 0.00044211800786024693,
+      "delta_average_precision": 1.364288359023691e-05
+    },
+    "application.housing_type": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.03% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.00034686842846922626,
+      "gain_share": 0.0030775251639758986,
+      "delta_average_precision": -0.0004255964580003324
+    },
+    "application.contract_type": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.03% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.0002601513213519197,
+      "gain_share": 0.006384573945812042,
+      "delta_average_precision": -0.0004236718571429543
+    },
+    "tradelines.days_overdue": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.03% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.0002601513213519197,
+      "gain_share": 0.003240069867285605,
+      "delta_average_precision": -0.000300568069853846
+    },
+    "tradelines.times_prolonged": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.01% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 0.00013007566067595985,
+      "gain_share": 0.0002641257043443581,
+      "delta_average_precision": 9.851660588422462e-07
+    },
+    "application.owns_car": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.01% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 6.503783033797993e-05,
+      "gain_share": 0.0001350002243237201,
+      "delta_average_precision": 4.01250737516734e-06
+    },
+    "application.owns_realty": {
+      "tier": "OPTIONAL",
+      "reason": "absence moves 0.00% of cases between review queues, below the 1.00% boundary",
+      "route_change_share": 2.167927677932664e-05,
+      "gain_share": 0.00024844368210370207,
+      "delta_average_precision": -1.7422314710469067e-05
+    }
+  },
+  "limitations": [
+    "Measured on the calibration partition of a research candidate with no unbiased final evaluation. The V1 final holdout is spent.",
+    "Ablation masks features at inference time; it does not retrain a model without the field, so it measures dependence of this fitted model, not the achievable accuracy of a model built without that field.",
+    "Route-change share depends on the research routing boundary and the thin/partial rule; changing either changes the tiering.",
+    "Tiering measures dependence of the RISK MODEL only. A field can be optional for the model and still be required by the separate affordability screen; tradelines.annuity is exactly that case."
+  ]
+}

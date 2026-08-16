@@ -1,0 +1,2 @@
+applicant_ref,annual_income,requested_credit,annual_annuity,goods_price,contract_type,income_type,education_type,housing_type,owns_car,car_age_years,owns_realty,employment_years,address_vintage_years,id_document_age_years,has_email,has_work_phone
+DEMO-01-CLEAN,1200000,900000,216000,950000,Cash loans,Commercial associate,Higher education,House / apartment,Y,5,Y,8.5,11.0,6.2,Y,Y

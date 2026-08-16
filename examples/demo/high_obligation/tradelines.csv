@@ -1,0 +1,4 @@
+account_ref,credit_type,status,opened_days_ago,sanctioned_amount,credit_limit,current_balance,overdue_amount,days_overdue,annuity,times_prolonged
+TL-3001,Mortgage,Active,1900,3200000,0,2050000,0,0,96000,0
+TL-3002,Car loan,Active,820,900000,0,540000,0,0,45000,0
+TL-3003,Consumer credit,Active,420,180000,0,96000,0,0,24000,0

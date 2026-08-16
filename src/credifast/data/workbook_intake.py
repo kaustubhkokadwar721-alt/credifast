@@ -60,16 +60,20 @@ APPLICATION_COLUMN_MAP = {
     "has_work_phone": "FLAG_WORK_PHONE",
 }
 
+# Required means the record cannot be built or read without it, not merely that the model
+# likes having it. contract_type, housing_type, owns_car and owns_realty were removed after
+# scripts/audit_input_coverage.py measured their absence at 0.026%, 0.035%, 0.007% and
+# 0.002% of calibration cases changing review route -- effectively nothing. They are still
+# accepted when supplied and stay missing, never defaulted, when absent.
+#
+# annual_income stays required on different grounds: the risk model barely uses it, but every
+# affordability ratio divides by it, so its absence silently disables the affordability screen.
 REQUIRED_APPLICATION_COLUMNS = (
     "annual_income",
     "requested_credit",
     "annual_annuity",
-    "contract_type",
     "income_type",
     "education_type",
-    "housing_type",
-    "owns_car",
-    "owns_realty",
     "employment_years",
 )
 

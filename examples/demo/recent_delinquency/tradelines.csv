@@ -1,0 +1,4 @@
+account_ref,credit_type,status,opened_days_ago,sanctioned_amount,credit_limit,current_balance,overdue_amount,days_overdue,annuity,times_prolonged
+TL-2001,Consumer credit,Active,640,300000,0,214000,18400,46,30000.0,1
+TL-2002,Credit card,Active,900,120000,120000,111500,6200,22,18000.0,0
+TL-2003,Microloan,Closed,1300,45000,0,0,0,0,,0

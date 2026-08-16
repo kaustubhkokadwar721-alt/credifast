@@ -1,0 +1,5 @@
+account_ref,credit_type,status,opened_days_ago,sanctioned_amount,credit_limit,current_balance,overdue_amount,days_overdue,annuity,times_prolonged
+TL-4001,Consumer credit,Active,38,90000,0,88500,0,0,15000,0
+TL-4002,Microloan,Active,96,60000,0,57800,0,0,12000,0
+TL-4003,Credit card,Active,160,80000,80000,74200,0,0,9600,0
+TL-4004,Consumer credit,Active,300,120000,0,71000,0,0,18000,0
